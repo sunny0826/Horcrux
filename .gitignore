@@ -1,0 +1,9 @@
+.trae
+PRD.md
+prototype.html
+horcrux
+.DS_Store
+backend/data
+backend/test-results
+backend/uploads
+backend/tmp

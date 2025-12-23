@@ -1,0 +1,2352 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frontend</title>
+  <style type="text/css" data-vite-dev-id="/Users/guoxudong/kwdb/Horcrux/frontend/src/index.css">*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}/*
+! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: JetBrains Mono, monospace; /* 1 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+  :root {
+    --bg-dark: #0a0a0a;
+    --bg-panel: #141414;
+    --primary-green: #00ff41;
+    --dim-green: #008f11;
+    --border-color: #222222;
+    --text-main: #e0e0e0;
+  }
+
+  body {
+  overflow: hidden;
+  background-color: var(--bg-dark);
+  font-family: JetBrains Mono, monospace;
+  color: var(--text-main);
+}
+.hx-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+.hx-sync-indicator {
+    transition: background-color 200ms ease, box-shadow 200ms ease;
+  }
+.hx-sync-indicator.syncing {
+    background-color: #2196f3 !important;
+    box-shadow: 0 0 8px rgba(33, 150, 243, 0.8) !important;
+    animation: hx-indicator-pulse 800ms ease-in-out infinite;
+  }
+.hx-sync-indicator.success {
+    background-color: #4caf50 !important;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.85) !important;
+    animation: none;
+  }
+.hx-sync-indicator.error {
+    background-color: #f44336 !important;
+    box-shadow: 0 0 8px rgba(244, 67, 54, 0.85) !important;
+    animation: none;
+  }
+.react-flow__edge.hx-sync-edge .react-flow__edge-path {
+    stroke: #00ff41;
+    stroke-width: 2;
+    stroke-dasharray: 8 6;
+    animation: hx-edge-flow 420ms linear infinite;
+    filter: drop-shadow(0 0 2px rgba(0, 255, 65, 0.55));
+    transition: stroke 350ms ease, stroke-width 350ms ease, filter 350ms ease, opacity 350ms ease;
+  }
+@keyframes hx-indicator-pulse {
+    0% { transform: scale(1); opacity: 0.55; }
+    50% { transform: scale(1.35); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.55; }
+  }
+@keyframes hx-edge-flow {
+    to { stroke-dashoffset: -28; }
+  }
+@media (prefers-reduced-motion: reduce) {
+    .hx-sync-indicator.syncing {
+      animation: none;
+    }
+    .react-flow__edge.hx-sync-edge .react-flow__edge-path {
+      animation: none;
+    }
+  }
+.scanline {
+  pointer-events: none;
+  position: absolute;
+  z-index: 99;
+  height: 100px;
+  width: 100%;
+  opacity: 0.1;
+    background: linear-gradient(0deg, rgba(0, 255, 65, 0.02) 0%, rgba(0, 255, 65, 0) 100%);
+    animation: scanline 8s linear infinite;
+}
+.btn-primary {
+  border-width: 1px;
+  border-color: var(--primary-green);
+  background-color: var(--primary-green);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+.btn-primary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+  color: var(--primary-green);
+}
+.btn-secondary {
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(51 51 51 / var(--tw-border-opacity, 1));
+  background-color: transparent;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity, 1));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+.btn-secondary:hover {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+/* 2025-12-21：Dashboard 的 pipeline 列表按需求移除缩略图，仅保留文本；添加过渡让布局变化更平滑 */
+.hx-pipe-list-item {
+    transition: background-color 200ms ease, border-color 200ms ease, transform 200ms ease;
+  }
+@media (prefers-reduced-motion: reduce) {
+    .hx-pipe-list-item {
+      transition: none;
+    }
+  }
+.form-group-geek {
+  position: relative;
+  border-left-width: 1px;
+  border-color: var(--border-color);
+  padding-left: 0.75rem;
+}
+.form-group-geek::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 0px;
+    height: 0.5rem;
+    width: 1px;
+    background-color: var(--primary-green);
+  }
+input, select {
+  border-radius: 0px !important;
+  border-width: 1px !important;
+  border-color: var(--border-color) !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(17 17 17 / var(--tw-bg-opacity, 1)) !important;
+  padding: 0.625rem !important;
+  font-size: 10px !important;
+  letter-spacing: 0.05em !important;
+  color: var(--text-main) !important;
+  outline: 2px solid transparent !important;
+  outline-offset: 2px !important;
+  transition-property: all !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important;
+}
+input:focus, select:focus {
+  border-color: var(--dim-green) !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(22 22 22 / var(--tw-bg-opacity, 1)) !important;
+}
+@keyframes scanline {
+    0% { bottom: 100%; }
+    100% { bottom: -100px; }
+  }
+.pointer-events-none {
+  pointer-events: none;
+}
+.pointer-events-auto {
+  pointer-events: auto;
+}
+.fixed {
+  position: fixed;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.sticky {
+  position: sticky;
+}
+.inset-0 {
+  inset: 0px;
+}
+.-top-1 {
+  top: -0.25rem;
+}
+.bottom-0 {
+  bottom: 0px;
+}
+.left-0 {
+  left: 0px;
+}
+.left-1\/2 {
+  left: 50%;
+}
+.left-2\.5 {
+  left: 0.625rem;
+}
+.left-3 {
+  left: 0.75rem;
+}
+.right-0 {
+  right: 0px;
+}
+.top-0 {
+  top: 0px;
+}
+.top-1\/2 {
+  top: 50%;
+}
+.z-10 {
+  z-index: 10;
+}
+.z-50 {
+  z-index: 50;
+}
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+.col-span-full {
+  grid-column: 1 / -1;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.ml-2 {
+  margin-left: 0.5rem;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-1 {
+  margin-right: 0.25rem;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+.mt-0\.5 {
+  margin-top: 0.125rem;
+}
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.flex {
+  display: flex;
+}
+.inline-flex {
+  display: inline-flex;
+}
+.table {
+  display: table;
+}
+.grid {
+  display: grid;
+}
+.hidden {
+  display: none;
+}
+.h-1\.5 {
+  height: 0.375rem;
+}
+.h-16 {
+  height: 4rem;
+}
+.h-2 {
+  height: 0.5rem;
+}
+.h-2\.5 {
+  height: 0.625rem;
+}
+.h-20 {
+  height: 5rem;
+}
+.h-3 {
+  height: 0.75rem;
+}
+.h-3\.5 {
+  height: 0.875rem;
+}
+.h-4 {
+  height: 1rem;
+}
+.h-40 {
+  height: 10rem;
+}
+.h-48 {
+  height: 12rem;
+}
+.h-5 {
+  height: 1.25rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
+.h-72 {
+  height: 18rem;
+}
+.h-8 {
+  height: 2rem;
+}
+.h-\[1px\] {
+  height: 1px;
+}
+.h-\[360px\] {
+  height: 360px;
+}
+.h-full {
+  height: 100%;
+}
+.h-screen {
+  height: 100vh;
+}
+.max-h-0 {
+  max-height: 0px;
+}
+.max-h-72 {
+  max-height: 18rem;
+}
+.max-h-\[200px\] {
+  max-height: 200px;
+}
+.max-h-\[40vh\] {
+  max-height: 40vh;
+}
+.max-h-\[70vh\] {
+  max-height: 70vh;
+}
+.w-1\.5 {
+  width: 0.375rem;
+}
+.w-14 {
+  width: 3.5rem;
+}
+.w-16 {
+  width: 4rem;
+}
+.w-2 {
+  width: 0.5rem;
+}
+.w-2\.5 {
+  width: 0.625rem;
+}
+.w-3 {
+  width: 0.75rem;
+}
+.w-3\.5 {
+  width: 0.875rem;
+}
+.w-4 {
+  width: 1rem;
+}
+.w-44 {
+  width: 11rem;
+}
+.w-5 {
+  width: 1.25rem;
+}
+.w-6 {
+  width: 1.5rem;
+}
+.w-8 {
+  width: 2rem;
+}
+.w-\[220px\] {
+  width: 220px;
+}
+.w-\[calc\(100\%-32px\)\] {
+  width: calc(100% - 32px);
+}
+.w-\[calc\(100vw-28px\)\] {
+  width: calc(100vw - 28px);
+}
+.w-full {
+  width: 100%;
+}
+.min-w-0 {
+  min-width: 0px;
+}
+.min-w-\[160px\] {
+  min-width: 160px;
+}
+.min-w-\[180px\] {
+  min-width: 180px;
+}
+.min-w-\[920px\] {
+  min-width: 920px;
+}
+.max-w-5xl {
+  max-width: 64rem;
+}
+.max-w-6xl {
+  max-width: 72rem;
+}
+.max-w-\[240px\] {
+  max-width: 240px;
+}
+.max-w-\[320px\] {
+  max-width: 320px;
+}
+.max-w-\[420px\] {
+  max-width: 420px;
+}
+.max-w-\[500px\] {
+  max-width: 500px;
+}
+.max-w-\[520px\] {
+  max-width: 520px;
+}
+.max-w-\[560px\] {
+  max-width: 560px;
+}
+.max-w-\[620px\] {
+  max-width: 620px;
+}
+.max-w-\[680px\] {
+  max-width: 680px;
+}
+.max-w-\[720px\] {
+  max-width: 720px;
+}
+.max-w-\[760px\] {
+  max-width: 760px;
+}
+.max-w-\[820px\] {
+  max-width: 820px;
+}
+.flex-1 {
+  flex: 1 1 0%;
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-0 {
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-1 {
+  --tw-translate-y: 0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-180 {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-45 {
+  --tw-rotate: 45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-95 {
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+@keyframes pulse {
+
+  50% {
+    opacity: .5;
+  }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+.cursor-col-resize {
+  cursor: col-resize;
+}
+.cursor-default {
+  cursor: default;
+}
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.touch-manipulation {
+  touch-action: manipulation;
+}
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.resize-y {
+  resize: vertical;
+}
+.appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-end {
+  align-items: flex-end;
+}
+.items-center {
+  align-items: center;
+}
+.items-stretch {
+  align-items: stretch;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-1 {
+  gap: 0.25rem;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.gap-3 {
+  gap: 0.75rem;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-6 {
+  gap: 1.5rem;
+}
+.gap-x-6 {
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.gap-y-1 {
+  row-gap: 0.25rem;
+}
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-y-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+.space-y-1\.5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.375rem * var(--tw-space-y-reverse));
+}
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+.divide-\[\#222\] > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(34 34 34 / var(--tw-divide-opacity, 1));
+}
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-x-auto {
+  overflow-x: auto;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+.break-words {
+  overflow-wrap: break-word;
+}
+.break-all {
+  word-break: break-all;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.rounded-none {
+  border-radius: 0px;
+}
+.border {
+  border-width: 1px;
+}
+.border-b {
+  border-bottom-width: 1px;
+}
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+.border-l {
+  border-left-width: 1px;
+}
+.border-l-2 {
+  border-left-width: 2px;
+}
+.border-r {
+  border-right-width: 1px;
+}
+.border-r-2 {
+  border-right-width: 2px;
+}
+.border-t {
+  border-top-width: 1px;
+}
+.border-t-2 {
+  border-top-width: 2px;
+}
+.border-dashed {
+  border-style: dashed;
+}
+.\!border-none {
+  border-style: none !important;
+}
+.\!border-border {
+  border-color: var(--border-color) !important;
+}
+.border-\[\#222\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(34 34 34 / var(--tw-border-opacity, 1));
+}
+.border-\[\#333\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(51 51 51 / var(--tw-border-opacity, 1));
+}
+.border-border {
+  border-color: var(--border-color);
+}
+.border-primary {
+  border-color: var(--primary-green);
+}
+.border-red-500\/50 {
+  border-color: rgb(239 68 68 / 0.5);
+}
+.border-red-900\/30 {
+  border-color: rgb(127 29 29 / 0.3);
+}
+.border-red-900\/50 {
+  border-color: rgb(127 29 29 / 0.5);
+}
+.border-transparent {
+  border-color: transparent;
+}
+.\!bg-\[\#111\] {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(17 17 17 / var(--tw-bg-opacity, 1)) !important;
+}
+.\!bg-primary {
+  background-color: var(--primary-green) !important;
+}
+.bg-\[\#080808\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(8 8 8 / var(--tw-bg-opacity, 1));
+}
+.bg-\[\#0a0a0a\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 10 10 / var(--tw-bg-opacity, 1));
+}
+.bg-\[\#0d0d0d\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 13 13 / var(--tw-bg-opacity, 1));
+}
+.bg-\[\#0d0d0d\]\/90 {
+  background-color: rgb(13 13 13 / 0.9);
+}
+.bg-\[\#111\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 17 17 / var(--tw-bg-opacity, 1));
+}
+.bg-\[\#1a1a1a\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 26 26 / var(--tw-bg-opacity, 1));
+}
+.bg-\[\#444\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(68 68 68 / var(--tw-bg-opacity, 1));
+}
+.bg-background {
+  background-color: var(--bg-dark);
+}
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+.bg-black\/30 {
+  background-color: rgb(0 0 0 / 0.3);
+}
+.bg-black\/40 {
+  background-color: rgb(0 0 0 / 0.4);
+}
+.bg-black\/70 {
+  background-color: rgb(0 0 0 / 0.7);
+}
+.bg-blue-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity, 1));
+}
+.bg-border {
+  background-color: var(--border-color);
+}
+.bg-cyan-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 211 238 / var(--tw-bg-opacity, 1));
+}
+.bg-dim {
+  background-color: var(--dim-green);
+}
+.bg-green-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity, 1));
+}
+.bg-primary {
+  background-color: var(--primary-green);
+}
+.bg-purple-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(192 132 252 / var(--tw-bg-opacity, 1));
+}
+.bg-red-500\/20 {
+  background-color: rgb(239 68 68 / 0.2);
+}
+.bg-transparent {
+  background-color: transparent;
+}
+.bg-yellow-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
+}
+.\!fill-primary {
+  fill: var(--primary-green) !important;
+}
+.p-1 {
+  padding: 0.25rem;
+}
+.p-1\.5 {
+  padding: 0.375rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-3 {
+  padding: 0.75rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.p-8 {
+  padding: 2rem;
+}
+.\!px-2\.5 {
+  padding-left: 0.625rem !important;
+  padding-right: 0.625rem !important;
+}
+.\!px-3 {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+.\!px-4 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+.\!py-1\.5 {
+  padding-top: 0.375rem !important;
+  padding-bottom: 0.375rem !important;
+}
+.\!py-2 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.px-1\.5 {
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.py-1\.5 {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.\!pl-8 {
+  padding-left: 2rem !important;
+}
+.\!pl-9 {
+  padding-left: 2.25rem !important;
+}
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
+}
+.pl-6 {
+  padding-left: 1.5rem;
+}
+.pr-2 {
+  padding-right: 0.5rem;
+}
+.pr-8 {
+  padding-right: 2rem;
+}
+.pt-4 {
+  padding-top: 1rem;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.font-mono {
+  font-family: JetBrains Mono, monospace;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-\[10px\] {
+  font-size: 10px;
+}
+.text-\[11px\] {
+  font-size: 11px;
+}
+.text-\[12px\] {
+  font-size: 12px;
+}
+.text-\[8px\] {
+  font-size: 8px;
+}
+.text-\[9px\] {
+  font-size: 9px;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
+}
+.leading-relaxed {
+  line-height: 1.625;
+}
+.tracking-\[0\.2em\] {
+  letter-spacing: 0.2em;
+}
+.tracking-\[0\.3em\] {
+  letter-spacing: 0.3em;
+}
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+.\!text-primary {
+  color: var(--primary-green) !important;
+}
+.text-\[\#00ff41\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 255 65 / var(--tw-text-opacity, 1));
+}
+.text-\[\#222\] {
+  --tw-text-opacity: 1;
+  color: rgb(34 34 34 / var(--tw-text-opacity, 1));
+}
+.text-\[\#333\] {
+  --tw-text-opacity: 1;
+  color: rgb(51 51 51 / var(--tw-text-opacity, 1));
+}
+.text-\[\#444\] {
+  --tw-text-opacity: 1;
+  color: rgb(68 68 68 / var(--tw-text-opacity, 1));
+}
+.text-\[\#666\] {
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity, 1));
+}
+.text-\[\#888\] {
+  --tw-text-opacity: 1;
+  color: rgb(136 136 136 / var(--tw-text-opacity, 1));
+}
+.text-\[\#e0e0e0\] {
+  --tw-text-opacity: 1;
+  color: rgb(224 224 224 / var(--tw-text-opacity, 1));
+}
+.text-blue-400 {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity, 1));
+}
+.text-dim {
+  color: var(--dim-green);
+}
+.text-primary {
+  color: var(--primary-green);
+}
+.text-red-400 {
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity, 1));
+}
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+}
+.text-red-900 {
+  --tw-text-opacity: 1;
+  color: rgb(127 29 29 / var(--tw-text-opacity, 1));
+}
+.text-textMain {
+  color: var(--text-main);
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity, 1));
+}
+.text-yellow-500 {
+  --tw-text-opacity: 1;
+  color: rgb(234 179 8 / var(--tw-text-opacity, 1));
+}
+.underline {
+  text-decoration-line: underline;
+}
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-100 {
+  opacity: 1;
+}
+.opacity-40 {
+  opacity: 0.4;
+}
+.opacity-50 {
+  opacity: 0.5;
+}
+.opacity-60 {
+  opacity: 0.6;
+}
+.opacity-70 {
+  opacity: 0.7;
+}
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-\[0_0_5px_\#008f11\] {
+  --tw-shadow: 0 0 5px #008f11;
+  --tw-shadow-colored: 0 0 5px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-\[0_0_5px_\#00ff41\] {
+  --tw-shadow: 0 0 5px #00ff41;
+  --tw-shadow-colored: 0 0 5px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.backdrop-blur-\[1px\] {
+  --tw-backdrop-blur: blur(1px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-blur-sm {
+  --tw-backdrop-blur: blur(4px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-\[max-height\2c opacity\] {
+  transition-property: max-height,opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-\[opacity\2c transform\] {
+  transition-property: opacity,transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-200 {
+  transition-duration: 200ms;
+}
+.duration-300 {
+  transition-duration: 300ms;
+}
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.hover\:border-primary:hover {
+  border-color: var(--primary-green);
+}
+.hover\:bg-\[\#111\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 17 17 / var(--tw-bg-opacity, 1));
+}
+.hover\:bg-\[\#151515\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 21 21 / var(--tw-bg-opacity, 1));
+}
+.hover\:bg-red-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
+}
+.hover\:bg-red-500\/10:hover {
+  background-color: rgb(239 68 68 / 0.1);
+}
+.hover\:text-\[\#e0e0e0\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(224 224 224 / var(--tw-text-opacity, 1));
+}
+.hover\:text-primary:hover {
+  color: var(--primary-green);
+}
+.hover\:text-red-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity, 1));
+}
+.hover\:text-red-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+}
+.hover\:text-textMain:hover {
+  color: var(--text-main);
+}
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.focus\:border-primary:focus {
+  border-color: var(--primary-green);
+}
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.active\:bg-red-500\/10:active {
+  background-color: rgb(239 68 68 / 0.1);
+}
+.disabled\:cursor-not-allowed:disabled {
+  cursor: not-allowed;
+}
+.disabled\:text-\[\#444\]:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(68 68 68 / var(--tw-text-opacity, 1));
+}
+.disabled\:opacity-40:disabled {
+  opacity: 0.4;
+}
+.disabled\:opacity-60:disabled {
+  opacity: 0.6;
+}
+.group:focus-within .group-focus-within\:opacity-100 {
+  opacity: 1;
+}
+.group:hover .group-hover\:text-primary {
+  color: var(--primary-green);
+}
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
+}
+.data-\[state\=closed\]\:scale-95[data-state="closed"] {
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.data-\[state\=open\]\:scale-100[data-state="open"] {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.data-\[state\=closed\]\:opacity-0[data-state="closed"] {
+  opacity: 0;
+}
+.data-\[state\=open\]\:opacity-100[data-state="open"] {
+  opacity: 1;
+}
+@media (min-width: 640px) {
+
+  .sm\:table-cell {
+    display: table-cell;
+  }
+}
+@media (min-width: 768px) {
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:table-cell {
+    display: table-cell;
+  }
+
+  .md\:max-h-\[420px\] {
+    max-height: 420px;
+  }
+
+  .md\:max-h-none {
+    max-height: none;
+  }
+
+  .md\:w-0 {
+    width: 0px;
+  }
+
+  .md\:w-\[520px\] {
+    width: 520px;
+  }
+
+  .md\:w-\[64px\] {
+    width: 64px;
+  }
+
+  .md\:w-auto {
+    width: auto;
+  }
+
+  .md\:max-w-none {
+    max-width: none;
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-\[120px_1fr\] {
+    grid-template-columns: 120px 1fr;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:items-center {
+    align-items: center;
+  }
+}
+@media (min-width: 1024px) {
+
+  .lg\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .lg\:inline-block {
+    display: inline-block;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+</style><style type="text/css" data-vite-dev-id="/Users/guoxudong/kwdb/Horcrux/frontend/node_modules/.pnpm/reactflow@11.11.4_@types+react@19.2.7_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/reactflow/dist/style.css">/* this gets exported as style.css and can be used for the default theming */
+/* these are the necessary styles for React Flow, they get used by base.css and style.css */
+.react-flow {
+  direction: ltr;
+}
+.react-flow__container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.react-flow__pane {
+  z-index: 1;
+  cursor: grab;
+}
+.react-flow__pane.selection {
+    cursor: pointer;
+  }
+.react-flow__pane.dragging {
+    cursor: grabbing;
+  }
+.react-flow__viewport {
+  transform-origin: 0 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.react-flow__renderer {
+  z-index: 4;
+}
+.react-flow__selection {
+  z-index: 6;
+}
+.react-flow__nodesselection-rect:focus,
+.react-flow__nodesselection-rect:focus-visible {
+  outline: none;
+}
+.react-flow .react-flow__edges {
+  pointer-events: none;
+  overflow: visible;
+}
+.react-flow__edge-path,
+.react-flow__connection-path {
+  stroke: #b1b1b7;
+  stroke-width: 1;
+  fill: none;
+}
+.react-flow__edge {
+  pointer-events: visibleStroke;
+  cursor: pointer;
+}
+.react-flow__edge.animated path {
+    stroke-dasharray: 5;
+    animation: dashdraw 0.5s linear infinite;
+  }
+.react-flow__edge.animated path.react-flow__edge-interaction {
+    stroke-dasharray: none;
+    animation: none;
+  }
+.react-flow__edge.inactive {
+    pointer-events: none;
+  }
+.react-flow__edge.selected,
+  .react-flow__edge:focus,
+  .react-flow__edge:focus-visible {
+    outline: none;
+  }
+.react-flow__edge.selected .react-flow__edge-path,
+  .react-flow__edge:focus .react-flow__edge-path,
+  .react-flow__edge:focus-visible .react-flow__edge-path {
+    stroke: #555;
+  }
+.react-flow__edge-textwrapper {
+    pointer-events: all;
+  }
+.react-flow__edge-textbg {
+    fill: white;
+  }
+.react-flow__edge .react-flow__edge-text {
+    pointer-events: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+.react-flow__connection {
+  pointer-events: none;
+}
+.react-flow__connection .animated {
+    stroke-dasharray: 5;
+    animation: dashdraw 0.5s linear infinite;
+  }
+.react-flow__connectionline {
+  z-index: 1001;
+}
+.react-flow__nodes {
+  pointer-events: none;
+  transform-origin: 0 0;
+}
+.react-flow__node {
+  position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: all;
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  cursor: grab;
+}
+.react-flow__node.dragging {
+    cursor: grabbing;
+  }
+.react-flow__nodesselection {
+  z-index: 3;
+  transform-origin: left top;
+  pointer-events: none;
+}
+.react-flow__nodesselection-rect {
+    position: absolute;
+    pointer-events: all;
+    cursor: grab;
+  }
+.react-flow__handle {
+  position: absolute;
+  pointer-events: none;
+  min-width: 5px;
+  min-height: 5px;
+  width: 6px;
+  height: 6px;
+  background: #1a192b;
+  border: 1px solid white;
+  border-radius: 100%;
+}
+.react-flow__handle.connectionindicator {
+    pointer-events: all;
+    cursor: crosshair;
+  }
+.react-flow__handle-bottom {
+    top: auto;
+    left: 50%;
+    bottom: -4px;
+    transform: translate(-50%, 0);
+  }
+.react-flow__handle-top {
+    left: 50%;
+    top: -4px;
+    transform: translate(-50%, 0);
+  }
+.react-flow__handle-left {
+    top: 50%;
+    left: -4px;
+    transform: translate(0, -50%);
+  }
+.react-flow__handle-right {
+    right: -4px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+.react-flow__edgeupdater {
+  cursor: move;
+  pointer-events: all;
+}
+.react-flow__panel {
+  position: absolute;
+  z-index: 5;
+  margin: 15px;
+}
+.react-flow__panel.top {
+    top: 0;
+  }
+.react-flow__panel.bottom {
+    bottom: 0;
+  }
+.react-flow__panel.left {
+    left: 0;
+  }
+.react-flow__panel.right {
+    right: 0;
+  }
+.react-flow__panel.center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+.react-flow__attribution {
+  font-size: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 2px 3px;
+  margin: 0;
+}
+.react-flow__attribution a {
+    text-decoration: none;
+    color: #999;
+  }
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+.react-flow__edgelabel-renderer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.react-flow__edge.updating .react-flow__edge-path {
+      stroke: #777;
+    }
+.react-flow__edge-text {
+    font-size: 10px;
+  }
+.react-flow__node.selectable:focus,
+  .react-flow__node.selectable:focus-visible {
+    outline: none;
+  }
+.react-flow__node-default,
+.react-flow__node-input,
+.react-flow__node-output,
+.react-flow__node-group {
+  padding: 10px;
+  border-radius: 3px;
+  width: 150px;
+  font-size: 12px;
+  color: #222;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #1a192b;
+  background-color: white;
+}
+.react-flow__node-default.selectable:hover, .react-flow__node-input.selectable:hover, .react-flow__node-output.selectable:hover, .react-flow__node-group.selectable:hover {
+      box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.08);
+    }
+.react-flow__node-default.selectable.selected,
+    .react-flow__node-default.selectable:focus,
+    .react-flow__node-default.selectable:focus-visible,
+    .react-flow__node-input.selectable.selected,
+    .react-flow__node-input.selectable:focus,
+    .react-flow__node-input.selectable:focus-visible,
+    .react-flow__node-output.selectable.selected,
+    .react-flow__node-output.selectable:focus,
+    .react-flow__node-output.selectable:focus-visible,
+    .react-flow__node-group.selectable.selected,
+    .react-flow__node-group.selectable:focus,
+    .react-flow__node-group.selectable:focus-visible {
+      box-shadow: 0 0 0 0.5px #1a192b;
+    }
+.react-flow__node-group {
+  background-color: rgba(240, 240, 240, 0.25);
+}
+.react-flow__nodesselection-rect,
+.react-flow__selection {
+  background: rgba(0, 89, 220, 0.08);
+  border: 1px dotted rgba(0, 89, 220, 0.8);
+}
+.react-flow__nodesselection-rect:focus,
+  .react-flow__nodesselection-rect:focus-visible,
+  .react-flow__selection:focus,
+  .react-flow__selection:focus-visible {
+    outline: none;
+  }
+.react-flow__controls {
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.08);
+}
+.react-flow__controls-button {
+    border: none;
+    background: #fefefe;
+    border-bottom: 1px solid #eee;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    padding: 5px;
+  }
+.react-flow__controls-button:hover {
+      background: #f4f4f4;
+    }
+.react-flow__controls-button svg {
+      width: 100%;
+      max-width: 12px;
+      max-height: 12px;
+    }
+.react-flow__controls-button:disabled {
+      pointer-events: none;
+    }
+.react-flow__controls-button:disabled svg {
+        fill-opacity: 0.4;
+      }
+.react-flow__minimap {
+  background-color: #fff;
+}
+.react-flow__minimap svg {
+  display: block;
+}
+.react-flow__resize-control {
+  position: absolute;
+}
+.react-flow__resize-control.left,
+.react-flow__resize-control.right {
+  cursor: ew-resize;
+}
+.react-flow__resize-control.top,
+.react-flow__resize-control.bottom {
+  cursor: ns-resize;
+}
+.react-flow__resize-control.top.left,
+.react-flow__resize-control.bottom.right {
+  cursor: nwse-resize;
+}
+.react-flow__resize-control.bottom.left,
+.react-flow__resize-control.top.right {
+  cursor: nesw-resize;
+}
+/* handle styles */
+.react-flow__resize-control.handle {
+  width: 4px;
+  height: 4px;
+  border: 1px solid #fff;
+  border-radius: 1px;
+  background-color: #3367d9;
+  transform: translate(-50%, -50%);
+}
+.react-flow__resize-control.handle.left {
+  left: 0;
+  top: 50%;
+}
+.react-flow__resize-control.handle.right {
+  left: 100%;
+  top: 50%;
+}
+.react-flow__resize-control.handle.top {
+  left: 50%;
+  top: 0;
+}
+.react-flow__resize-control.handle.bottom {
+  left: 50%;
+  top: 100%;
+}
+.react-flow__resize-control.handle.top.left {
+  left: 0;
+}
+.react-flow__resize-control.handle.bottom.left {
+  left: 0;
+}
+.react-flow__resize-control.handle.top.right {
+  left: 100%;
+}
+.react-flow__resize-control.handle.bottom.right {
+  left: 100%;
+}
+/* line styles */
+.react-flow__resize-control.line {
+  border-color: #3367d9;
+  border-width: 0;
+  border-style: solid;
+}
+.react-flow__resize-control.line.left,
+.react-flow__resize-control.line.right {
+  width: 1px;
+  transform: translate(-50%, 0);
+  top: 0;
+  height: 100%;
+}
+.react-flow__resize-control.line.left {
+  left: 0;
+  border-left-width: 1px;
+}
+.react-flow__resize-control.line.right {
+  left: 100%;
+  border-right-width: 1px;
+}
+.react-flow__resize-control.line.top,
+.react-flow__resize-control.line.bottom {
+  height: 1px;
+  transform: translate(0, -50%);
+  left: 0;
+  width: 100%;
+}
+.react-flow__resize-control.line.top {
+  top: 0;
+  border-top-width: 1px;
+}
+.react-flow__resize-control.line.bottom {
+  border-bottom-width: 1px;
+  top: 100%;
+}
+</style><style type="text/css">
+  .with-scroll-bars-hidden {
+   overflow: hidden !important;
+   padding-right: 0px !important;
+  }
+  body[data-scroll-locked] {
+    overflow: hidden !important;
+    overscroll-behavior: contain;
+    position: relative !important;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    margin-left:0;
+    margin-top:0;
+    margin-right: 0px !important;
+    
+  }
+  
+  .right-scroll-bar-position {
+    right: 0px !important;
+  }
+  
+  .width-before-scroll-bar {
+    margin-right: 0px !important;
+  }
+  
+  .right-scroll-bar-position .right-scroll-bar-position {
+    right: 0 !important;
+  }
+  
+  .width-before-scroll-bar .width-before-scroll-bar {
+    margin-right: 0 !important;
+  }
+  
+  body[data-scroll-locked] {
+    --removed-body-scroll-bar-size: 0px;
+  }
+</style></head>
+  <body data-scroll-locked="1" style="pointer-events: none;"><span data-radix-focus-guard="" tabindex="0" data-aria-hidden="true" aria-hidden="true" style="outline: currentcolor; opacity: 0; position: fixed; pointer-events: none;"></span>
+    <div id="root"><div class="h-screen flex flex-col overflow-hidden relative bg-background text-textMain font-mono"><div class="scanline pointer-events-none" data-aria-hidden="true" aria-hidden="true"></div><header class="h-16 border-b border-border flex items-center justify-between px-6 bg-[#0d0d0d] z-50 shrink-0" data-aria-hidden="true" aria-hidden="true"><div class="flex items-center space-x-8"><div class="flex items-center space-x-3 pr-8 border-r border-border"><div class="w-8 h-8 border border-primary flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal text-primary w-4 h-4" aria-hidden="true"><path d="M12 19h8"></path><path d="m4 17 6-6-6-6"></path></svg></div><h1 class="text-lg font-bold tracking-widest text-primary">HORCRUX</h1></div><nav class="flex items-center space-x-1"><button class="flex items-center space-x-2 px-4 h-16 transition-all border-b-2 hover:bg-[#111] text-[#666] hover:text-primary border-transparent"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu w-4 h-4" aria-hidden="true"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg><span class="text-[11px] uppercase tracking-tighter font-bold">Core.Dashboard</span></button><button class="flex items-center space-x-2 px-4 h-16 transition-all border-b-2 bg-primary/10 text-primary border-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-workflow w-4 h-4" aria-hidden="true"><rect width="8" height="8" x="3" y="3" rx="2"></rect><path d="M7 11v4a2 2 0 0 0 2 2h4"></path><rect width="8" height="8" x="13" y="13" rx="2"></rect></svg><span class="text-[11px] uppercase tracking-tighter font-bold">Flow.Designer</span></button><button class="flex items-center space-x-2 px-4 h-16 transition-all border-b-2 hover:bg-[#111] text-[#666] hover:text-primary border-transparent"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert w-4 h-4" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg><span class="text-[11px] uppercase tracking-tighter font-bold">Auth.Vault</span></button><button class="flex items-center space-x-2 px-4 h-16 transition-all border-b-2 hover:bg-[#111] text-[#666] hover:text-primary border-transparent"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-history w-4 h-4" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l4 2"></path></svg><span class="text-[11px] uppercase tracking-tighter font-bold">Sync.History</span></button><button class="flex items-center space-x-2 px-4 h-16 transition-all border-b-2 hover:bg-[#111] text-[#666] hover:text-primary border-transparent"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings w-4 h-4" aria-hidden="true"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle cx="12" cy="12" r="3"></circle></svg><span class="text-[11px] uppercase tracking-tighter font-bold">Sys.Config</span></button></nav></div><div class="flex items-center space-x-8"><div class="hidden lg:flex items-center space-x-4"><span class="text-[#444] text-[10px]">ROOT@HORCRUX:~/SYNC_TASKS$</span><span class="animate-pulse w-2 h-4 bg-primary"></span></div><div class="flex items-center space-x-6"><button class="text-[10px] text-primary hover:bg-primary/10 px-4 py-1.5 border border-primary transition uppercase tracking-widest font-bold">[ New_Operation ]</button><div class="flex items-center space-x-6 pl-6 border-l border-border"><div class="flex flex-col items-end"><span class="text-[9px] text-dim">● KERNEL_READY</span><span class="text-[8px] text-[#444] mt-0.5">STABLE_v0.1.0</span></div><div class="w-8 h-8 border border-[#333] flex items-center justify-center bg-[#111]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-4 h-4 text-[#666]" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div></div></div></div></header><main class="flex-1 flex flex-col overflow-hidden bg-background"><div class="flex-1 overflow-hidden relative"><div class="h-full w-full relative flex flex-col md:flex-row overflow-hidden"><div class="flex-1 relative min-w-0"><div class="react-flow bg-background" data-testid="rf__wrapper" style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"><div class="react-flow__renderer" data-aria-hidden="true" aria-hidden="true" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"><div class="react-flow__pane" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"><div class="react-flow__viewport react-flow__container" style="transform: translate(0px) scale(1);"><svg width="1247" height="656" class="react-flow__edges react-flow__container" style="z-index: 0;"><defs></defs><g></g></svg><div class="react-flow__edgelabel-renderer"></div><div class="react-flow__nodes" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"></div></div></div></div><svg class="react-flow__background" data-testid="rf__background" data-aria-hidden="true" aria-hidden="true" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"><pattern id="pattern-1undefined" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="translate(-15,-15)"><path stroke="#222" stroke-width="1" d="M15 0 V30 M0 15 H30"></path></pattern><rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-1undefined)"></rect></svg><div class="react-flow__panel react-flow__controls !bg-[#111] !border-border !fill-primary bottom left" data-testid="rf__controls" data-aria-hidden="true" aria-hidden="true" style="pointer-events: all;"><button type="button" class="react-flow__controls-button react-flow__controls-zoomin" title="zoom in" aria-label="zoom in"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M32 18.133H18.133V32h-4.266V18.133H0v-4.266h13.867V0h4.266v13.867H32z"></path></svg></button><button type="button" class="react-flow__controls-button react-flow__controls-zoomout" title="zoom out" aria-label="zoom out"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 5"><path d="M0 0h32v4.2H0z"></path></svg></button><button type="button" class="react-flow__controls-button react-flow__controls-fitview" title="fit view" aria-label="fit view"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 30"><path d="M3.692 4.63c0-.53.4-.938.939-.938h5.215V0H4.708C2.13 0 0 2.054 0 4.63v5.216h3.692V4.631zM27.354 0h-5.2v3.692h5.17c.53 0 .984.4.984.939v5.215H32V4.631A4.624 4.624 0 0027.354 0zm.954 24.83c0 .532-.4.94-.939.94h-5.215v3.768h5.215c2.577 0 4.631-2.13 4.631-4.707v-5.139h-3.692v5.139zm-23.677.94c-.531 0-.939-.4-.939-.94v-5.138H0v5.139c0 2.577 2.13 4.707 4.708 4.707h5.138V25.77H4.631z"></path></svg></button><button type="button" class="react-flow__controls-button react-flow__controls-interactive" title="toggle interactivity" aria-label="toggle interactivity"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 32"><path d="M21.333 10.667H19.81V7.619C19.81 3.429 16.38 0 12.19 0c-4.114 1.828-1.37 2.133.305 2.438 1.676.305 4.42 2.59 4.42 5.181v3.048H3.047A3.056 3.056 0 000 13.714v15.238A3.056 3.056 0 003.048 32h18.285a3.056 3.056 0 003.048-3.048V13.714a3.056 3.056 0 00-3.048-3.047zM12.19 24.533a3.056 3.056 0 01-3.047-3.047 3.056 3.056 0 013.047-3.048 3.056 3.056 0 013.048 3.048 3.056 3.056 0 01-3.048 3.047z"></path></svg></button></div><div class="react-flow__panel flex space-x-2 top left" data-aria-hidden="true" aria-hidden="true" style="pointer-events: all;"><div class="flex flex-col space-y-2"><div class="bg-[#0d0d0d] border border-border p-1 flex space-x-1"><button class="p-2 hover:bg-primary/10 active:bg-primary/10 text-[#666] hover:text-primary transition-colors touch-manipulation" title="Add Source"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database w-4 h-4" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg></button><button class="p-2 hover:bg-primary/10 active:bg-primary/10 text-[#666] hover:text-primary transition-colors touch-manipulation" title="Add Processor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-funnel w-4 h-4" aria-hidden="true"><path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"></path></svg></button><button class="p-2 hover:bg-primary/10 active:bg-primary/10 text-[#666] hover:text-primary transition-colors touch-manipulation" title="Add Target"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><button class="p-2 hover:bg-primary/10 active:bg-primary/10 text-[#666] hover:text-primary transition-colors touch-manipulation" title="Hide Pipelines"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left w-4 h-4 transition-transform rotate-180" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button></div><div class="bg-[#0d0d0d] border border-border px-2 py-1.5 flex items-center gap-2"><button class="flex-1 text-left text-[9px] uppercase font-bold tracking-widest text-[#666] hover:text-primary transition-colors truncate" title="Manage Pipelines">TEST_PIPE v1</button><button class="p-1.5 border border-border text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10 transition-colors touch-manipulation" title="New Pipeline"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus w-3.5 h-3.5" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button><button class="p-1.5 border border-border transition-colors touch-manipulation text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10" title="Versions"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-history w-3.5 h-3.5" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l4 2"></path></svg></button><button class="p-1.5 border border-border transition-colors touch-manipulation text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10" title="Ops"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll-text w-3.5 h-3.5" aria-hidden="true"><path d="M15 12h-5"></path><path d="M15 8h-5"></path><path d="M19 17V5a2 2 0 0 0-2-2H4"></path><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"></path></svg></button><button class="p-1.5 border border-border transition-colors touch-manipulation text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10" title="Autosave Logs"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal w-3.5 h-3.5" aria-hidden="true"><path d="M12 19h8"></path><path d="m4 17 6-6-6-6"></path></svg></button></div></div></div><div class="react-flow__panel flex items-center space-x-2 top right" data-aria-hidden="true" aria-hidden="true" style="pointer-events: all;"><button class="btn-secondary !py-1.5 flex items-center space-x-2 touch-manipulation"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal w-3 h-3" aria-hidden="true"><path d="M12 19h8"></path><path d="m4 17 6-6-6-6"></path></svg><span>SHOW_LOGS</span></button><button disabled="" class="btn-secondary !py-1.5 flex items-center space-x-2 touch-manipulation opacity-50 cursor-not-allowed" title="已自动保存"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save w-3 h-3" aria-hidden="true"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"></path><path d="M7 3v4a1 1 0 0 0 1 1h7"></path></svg><span>SAVED</span></button><button class="btn-primary !py-1.5 flex items-center space-x-2 touch-manipulation "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-3 h-3" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg><span>EXECUTE_SYNC</span></button></div><div class="react-flow__panel pointer-events-auto bottom left" data-aria-hidden="true" aria-hidden="true" style="pointer-events: all;"><div class="border border-border bg-[#0d0d0d]/90 backdrop-blur-sm w-[calc(100vw-28px)] max-w-[620px] md:max-w-none md:w-[64px]" data-testid="pipe-metadata-panel" role="region" aria-label="Pipe 元数据面板"><div class="p-3 border-b border-border bg-[#111] flex items-center justify-between gap-2"><div class="flex items-center gap-2 min-w-0"><h4 class="text-[11px] font-bold text-primary uppercase tracking-widest truncate">Pipe_Metadata</h4></div><button class="p-1.5 border border-border text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10 transition-colors touch-manipulation focus:outline-none focus:ring-2 focus:ring-primary/40" title="Expand" aria-expanded="false" aria-controls="pipe-meta-body"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right w-3.5 h-3.5" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button></div><div id="pipe-meta-body" class="overflow-hidden transition-[max-height,opacity] duration-200 ease-out max-h-0 opacity-0 pointer-events-none"><div class="p-3 space-y-2"><div class="flex items-center gap-2 flex-wrap"><div class="inline-flex border border-border bg-black/40" role="tablist" aria-label="元数据视图切换"><button class="px-2 py-1 text-[9px] uppercase font-bold transition-colors touch-manipulation text-primary bg-primary/10" role="tab" aria-selected="true">meta</button><button class="px-2 py-1 text-[9px] uppercase font-bold transition-colors touch-manipulation text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10" role="tab" aria-selected="false">nodes</button><button class="px-2 py-1 text-[9px] uppercase font-bold transition-colors touch-manipulation text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10" role="tab" aria-selected="false">edges</button></div><input class="flex-1 min-w-[180px] bg-black border border-border px-2 py-1.5 text-[10px] text-textMain focus:border-primary outline-none transition-colors focus:ring-2 focus:ring-primary/30" placeholder="搜索 key / value" aria-label="搜索元数据" value=""><button class="px-2 py-1 border border-border text-[9px] uppercase font-bold transition-colors touch-manipulation text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/40" title="Sort" aria-label="切换排序">A-&gt;Z</button></div><div class="max-h-[40vh] md:max-h-[420px] overflow-y-auto border border-border bg-black/40" role="list" aria-label="元数据列表"><div class="p-2 space-y-1"><div class="group grid grid-cols-1 md:grid-cols-[120px_1fr] gap-2 border border-border/50 bg-black/40 px-2 py-2 hover:border-primary/30 hover:bg-primary/5 transition-colors"><div class="flex items-center gap-2 min-w-0"><span class="inline-flex h-1.5 w-1.5 rounded-full bg-green-400" aria-hidden="true"></span><div class="text-[10px] text-[#666] font-mono break-all uppercase tracking-wider">autosave</div></div><div class="flex items-start gap-2 min-w-0"><div class="text-[10px] text-textMain font-mono break-all " title="-">-</div></div></div><div class="group grid grid-cols-1 md:grid-cols-[120px_1fr] gap-2 border border-border/50 bg-black/40 px-2 py-2 hover:border-primary/30 hover:bg-primary/5 transition-colors"><div class="flex items-center gap-2 min-w-0"><span class="inline-flex h-1.5 w-1.5 rounded-full bg-[#444]" aria-hidden="true"></span><div class="text-[10px] text-[#666] font-mono break-all uppercase tracking-wider">description</div></div><div class="flex items-start gap-2 min-w-0"><div class="text-[10px] text-textMain font-mono break-all " title="-">-</div></div></div><div class="group grid grid-cols-1 md:grid-cols-[120px_1fr] gap-2 border border-border/50 bg-black/40 px-2 py-2 hover:border-primary/30 hover:bg-primary/5 transition-colors"><div class="flex items-center gap-2 min-w-0"><span class="inline-flex h-1.5 w-1.5 rounded-full bg-yellow-400" aria-hidden="true"></span><div class="text-[10px] text-[#666] font-mono break-all uppercase tracking-wider">dirty</div></div><div class="flex items-start gap-2 min-w-0"><div class="text-[10px] text-textMain font-mono break-all " title="false">false</div></div></div><div class="group grid grid-cols-1 md:grid-cols-[120px_1fr] gap-2 border border-border/50 bg-black/40 px-2 py-2 hover:border-primary/30 hover:bg-primary/5 transition-colors"><div class="flex items-center gap-2 min-w-0"><span class="inline-flex h-1.5 w-1.5 rounded-full bg-[#444]" aria-hidden="true"></span><div class="text-[10px] text-[#666] font-mono break-all uppercase tracking-wider">edges</div></div><div class="flex items-start gap-2 min-w-0"><div class="text-[10px] text-textMain font-mono break-all " title="0">0</div></div></div><div class="group grid grid-cols-1 md:grid-cols-[120px_1fr] gap-2 border border-border/50 bg-black/40 px-2 py-2 hover:border-primary/30 hover:bg-primary/5 transition-colors"><div class="flex items-center gap-2 min-w-0"><span class="inline-flex h-1.5 w-1.5 rounded-full bg-blue-400" aria-hidden="true"></span><div class="text-[10px] text-[#666] font-mono break-all uppercase tracking-wider">id</div></div><div class="flex items-start gap-2 min-w-0"><div class="text-[10px] text-textMain font-mono break-all " title="test-pipe">test-pipe</div></div></div><div class="group grid grid-cols-1 md:grid-cols-[120px_1fr] gap-2 border border-border/50 bg-black/40 px-2 py-2 hover:border-primary/30 hover:bg-primary/5 transition-colors"><div class="flex items-center gap-2 min-w-0"><span class="inline-flex h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true"></span><div class="text-[10px] text-[#666] font-mono break-all uppercase tracking-wider">name</div><span class="ml-auto px-1.5 py-0.5 border border-border text-[8px] uppercase font-bold text-[#666] bg-black/40">KEY</span></div><div class="flex items-start gap-2 min-w-0"><div class="text-[10px] text-textMain font-mono break-all " title="TEST_PIPE">TEST_PIPE</div></div></div><div class="group grid grid-cols-1 md:grid-cols-[120px_1fr] gap-2 border border-border/50 bg-black/40 px-2 py-2 hover:border-primary/30 hover:bg-primary/5 transition-colors"><div class="flex items-center gap-2 min-w-0"><span class="inline-flex h-1.5 w-1.5 rounded-full bg-[#444]" aria-hidden="true"></span><div class="text-[10px] text-[#666] font-mono break-all uppercase tracking-wider">nodes</div></div><div class="flex items-start gap-2 min-w-0"><div class="text-[10px] text-textMain font-mono break-all " title="0">0</div></div></div><div class="group grid grid-cols-1 md:grid-cols-[120px_1fr] gap-2 border border-border/50 bg-black/40 px-2 py-2 hover:border-primary/30 hover:bg-primary/5 transition-colors"><div class="flex items-center gap-2 min-w-0"><span class="inline-flex h-1.5 w-1.5 rounded-full bg-cyan-400" aria-hidden="true"></span><div class="text-[10px] text-[#666] font-mono break-all uppercase tracking-wider">updated_at</div><span class="ml-auto px-1.5 py-0.5 border border-border text-[8px] uppercase font-bold text-[#666] bg-black/40">KEY</span></div><div class="flex items-start gap-2 min-w-0"><div class="text-[10px] text-textMain font-mono break-all " title="2025-12-23T01:19:04.100Z">2025-12-23T01:19:04.100Z</div></div></div><div class="group grid grid-cols-1 md:grid-cols-[120px_1fr] gap-2 border border-border/50 bg-black/40 px-2 py-2 hover:border-primary/30 hover:bg-primary/5 transition-colors"><div class="flex items-center gap-2 min-w-0"><span class="inline-flex h-1.5 w-1.5 rounded-full bg-purple-400" aria-hidden="true"></span><div class="text-[10px] text-[#666] font-mono break-all uppercase tracking-wider">version</div><span class="ml-auto px-1.5 py-0.5 border border-border text-[8px] uppercase font-bold text-[#666] bg-black/40">KEY</span></div><div class="flex items-start gap-2 min-w-0"><div class="text-[10px] text-textMain font-mono break-all " title="1">1</div></div></div></div></div></div></div></div></div><div class="react-flow__panel react-flow__attribution bottom right" data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://reactflow.dev/pro" data-aria-hidden="true" aria-hidden="true" style="pointer-events: all;"><a href="https://reactflow.dev" target="_blank" rel="noopener noreferrer" aria-label="React Flow attribution">React Flow</a></div><div id="react-flow__node-desc-1" data-aria-hidden="true" aria-hidden="true" style="display: none;">Press enter or space to select a node.You can then use the arrow keys to move the node around. Press delete to remove it and escape to cancel. </div><div id="react-flow__edge-desc-1" data-aria-hidden="true" aria-hidden="true" style="display: none;">Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.</div><div id="react-flow__aria-live-1" aria-live="assertive" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"></div></div></div><div class="border-l border-border bg-[#0d0d0d] flex flex-col overflow-hidden transition-all duration-200 relative w-full md:w-auto max-h-0 md:w-0" data-aria-hidden="true" aria-hidden="true" style="width: 0px;"><div class="p-3 border-b border-border bg-[#111] flex items-center justify-between"><div class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal w-3.5 h-3.5 text-primary" aria-hidden="true"><path d="M12 19h8"></path><path d="m4 17 6-6-6-6"></path></svg><span class="text-[10px] font-bold text-primary uppercase tracking-widest">Live_Task_Log</span></div><div class="flex items-center space-x-2"><button disabled="" class="px-2 py-1 border border-border text-[9px] uppercase font-bold transition-colors touch-manipulation flex items-center space-x-1 opacity-40 cursor-not-allowed text-[#444] " title="Clear Logs"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2 lucide-trash-2 w-3 h-3" aria-hidden="true"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg><span>CLEAR</span></button><button disabled="" class="p-1.5 border border-border transition-colors touch-manipulation opacity-40 cursor-not-allowed text-[#444]" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy w-3.5 h-3.5" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button disabled="" class="p-1.5 border border-border transition-colors touch-manipulation opacity-40 cursor-not-allowed text-[#444]" title="Export"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download w-3.5 h-3.5" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></button><button class="p-1.5 border border-border text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10 transition-colors touch-manipulation" title="Collapse"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right w-3.5 h-3.5" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button></div></div><div class="px-3 py-2 border-b border-border bg-[#0a0a0a]"><div class="text-[9px] uppercase font-bold flex items-center"><span class="text-[#444] flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal w-2.5 h-2.5 mr-1" aria-hidden="true"><path d="M12 19h8"></path><path d="m4 17 6-6-6-6"></path></svg> IDLE</span></div><div class="mt-1 text-[8px] text-[#444] font-mono truncate">TASK: NONE</div></div><div class="px-3 py-2 border-b border-border bg-[#0a0a0a] space-y-2"><div class="flex items-center gap-2"><input class="flex-1 bg-black border border-border px-2 py-1.5 text-[10px] text-textMain focus:border-primary outline-none transition-colors" placeholder="搜索日志" value=""><select class="bg-black border border-border px-2 py-1.5 text-[10px] text-textMain focus:border-primary outline-none transition-colors"><option value="all">ALL</option><option value="target">TARGET</option><option value="system">SYSTEM</option></select></div><div class="flex items-center gap-1 flex-wrap"><button class="px-2 py-1 border border-border text-[9px] uppercase font-bold transition-colors touch-manipulation text-primary bg-primary/10">DEBUG</button><button class="px-2 py-1 border border-border text-[9px] uppercase font-bold transition-colors touch-manipulation text-primary bg-primary/10">INFO</button><button class="px-2 py-1 border border-border text-[9px] uppercase font-bold transition-colors touch-manipulation text-primary bg-primary/10">WARN</button><button class="px-2 py-1 border border-border text-[9px] uppercase font-bold transition-colors touch-manipulation text-primary bg-primary/10">ERROR</button></div></div><div class="flex-1 overflow-y-auto p-3 font-mono text-[10px] space-y-1 bg-black/40"><div class="text-[#333] italic">Waiting for logs...</div><div></div></div></div><button class="hidden md:flex items-center justify-center w-8 border-l border-border bg-[#0d0d0d] text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10 transition-colors touch-manipulation" title="Expand Logs" data-aria-hidden="true" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left w-4 h-4" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button></div></div></main></div></div>
+    <script type="module" src="/src/main.tsx"></script>
+  
+
+<div data-state="open" class="fixed inset-0 bg-black/70 backdrop-blur-[1px] opacity-0 transition-opacity duration-200 data-[state=open]:opacity-100 data-[state=closed]:opacity-0" data-aria-hidden="true" aria-hidden="true" style="pointer-events: auto;"></div><div role="dialog" id="radix-_r_3_" aria-describedby="radix-_r_5_" aria-labelledby="radix-_r_4_" data-state="open" class="fixed left-1/2 top-1/2 w-[calc(100%-32px)] -translate-x-1/2 -translate-y-1/2 bg-[#0d0d0d] border border-border shadow-2xl opacity-0 scale-95 transition-[opacity,transform] duration-200 data-[state=open]:opacity-100 data-[state=open]:scale-100 data-[state=closed]:opacity-0 data-[state=closed]:scale-95 focus:outline-none max-w-[820px]" tabindex="-1" style="pointer-events: auto;"><div class="p-4 border-b border-border bg-[#111] flex items-center justify-between"><div class="flex items-center space-x-2"><h2 id="radix-_r_4_" class="text-[11px] font-bold text-primary uppercase tracking-[0.2em]">Pipelines</h2></div><button class="p-1.5 border border-border text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10 transition-colors touch-manipulation" aria-label="Close" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-4 h-4" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button></div><div class="p-4 space-y-4 max-h-[70vh] overflow-y-auto"><div class="border border-border bg-black/40 p-3 space-y-3"><div class="flex items-center justify-between gap-2"><div class="text-[9px] uppercase font-bold text-[#444] tracking-wider">Current Pipeline</div><button class="px-2 py-1 border border-border text-[8px] uppercase font-bold transition-colors touch-manipulation text-[#666] hover:text-primary hover:bg-primary/10 active:bg-primary/10">EDIT</button></div><div class="space-y-2"><input disabled="" class="w-full bg-black border border-border p-2 text-[10px] text-textMain font-bold focus:border-primary outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed disabled:text-[#444]" placeholder="Pipeline name" type="text" value="TEST_PIPE"><textarea disabled="" rows="3" class="w-full bg-black border border-border p-2 text-[10px] text-textMain focus:border-primary outline-none transition-colors resize-y disabled:opacity-60 disabled:cursor-not-allowed disabled:text-[#444]" placeholder="Pipeline description"></textarea><div class="flex items-center gap-2 flex-wrap"><button disabled="" class="btn-primary !py-2 !px-4 touch-manipulation opacity-50 cursor-not-allowed" title="已自动保存">SAVED</button><button class="btn-secondary !py-2 !px-4 touch-manipulation">VERSIONS</button><button class="btn-secondary !py-2 !px-4 touch-manipulation">OPS</button><button class="px-3 py-2 border border-red-900/50 text-red-500 text-[9px] uppercase font-bold hover:bg-red-500/10 active:bg-red-500/10 transition-colors touch-manipulation">DELETE</button></div></div></div><div class="border border-border bg-black/40 p-3 space-y-3"><div class="flex items-center justify-between gap-3"><div class="text-[9px] uppercase font-bold text-[#444] tracking-wider">Pipeline List</div><input class="w-[220px] bg-black border border-border p-2 text-[10px] text-textMain focus:border-primary outline-none transition-colors" placeholder="Search by name" type="text" value=""></div><div class="space-y-2"><div class="border border-border bg-black/40 p-2 flex items-center justify-between gap-2"><button class="flex-1 text-left" title="test-pipe"><div class="text-[10px] text-textMain font-bold truncate">TEST_PIPE (active)</div><div class="text-[8px] text-[#444] font-mono truncate">test-pipe · v1 · 2025-12-23T01:19:04.256Z</div></button><button class="p-1.5 border border-red-900/50 text-red-500 hover:bg-red-500/10 active:bg-red-500/10 transition-colors touch-manipulation" title="Delete"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2 lucide-trash-2 w-3.5 h-3.5" aria-hidden="true"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button></div></div></div></div><div class="p-4 border-t border-border bg-[#111] flex justify-end"><button class="btn-secondary !py-2 !px-4 touch-manipulation flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus w-3.5 h-3.5" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>CREATE NEW PIPELINE</button></div></div><span data-radix-focus-guard="" tabindex="0" data-aria-hidden="true" aria-hidden="true" style="outline: currentcolor; opacity: 0; position: fixed; pointer-events: none;"></span></body></html>

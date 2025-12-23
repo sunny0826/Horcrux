@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-dark: #0a0a0a;
+    --bg-panel: #141414;
+    --primary-green: #00ff41;
+    --dim-green: #008f11;
+    --border-color: #222222;
+    --text-main: #e0e0e0;
+  }
+
+  body {
+    @apply bg-background text-textMain font-mono overflow-hidden;
+  }
+}
+
+@layer components {
+  .geek-border {
+    @apply border border-border hover:border-dim transition-colors;
+  }
+
+  .hx-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .hx-sync-indicator {
+    transition: background-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  .hx-sync-indicator.syncing {
+    background-color: #2196f3 !important;
+    box-shadow: 0 0 8px rgba(33, 150, 243, 0.8) !important;
+    animation: hx-indicator-pulse 800ms ease-in-out infinite;
+  }
+
+  .hx-sync-indicator.success {
+    background-color: #4caf50 !important;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.85) !important;
+    animation: none;
+  }
+
+  .hx-sync-indicator.error {
+    background-color: #f44336 !important;
+    box-shadow: 0 0 8px rgba(244, 67, 54, 0.85) !important;
+    animation: none;
+  }
+
+  .react-flow__edge.hx-sync-edge .react-flow__edge-path {
+    stroke: #00ff41;
+    stroke-width: 2;
+    stroke-dasharray: 8 6;
+    animation: hx-edge-flow 420ms linear infinite;
+    filter: drop-shadow(0 0 2px rgba(0, 255, 65, 0.55));
+    transition: stroke 350ms ease, stroke-width 350ms ease, filter 350ms ease, opacity 350ms ease;
+  }
+
+  @keyframes hx-indicator-pulse {
+    0% { transform: scale(1); opacity: 0.55; }
+    50% { transform: scale(1.35); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.55; }
+  }
+
+  @keyframes hx-edge-flow {
+    to { stroke-dashoffset: -28; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hx-sync-indicator.syncing {
+      animation: none;
+    }
+    .react-flow__edge.hx-sync-edge .react-flow__edge-path {
+      animation: none;
+    }
+  }
+
+  .scanline {
+    @apply w-full h-[100px] z-[99] pointer-events-none absolute opacity-10;
+    background: linear-gradient(0deg, rgba(0, 255, 65, 0.02) 0%, rgba(0, 255, 65, 0) 100%);
+    animation: scanline 8s linear infinite;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-black border border-primary px-6 py-2 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-primary transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-[#666] border border-[#333] px-6 py-2 text-[10px] uppercase tracking-[0.2em] hover:text-primary hover:border-primary transition-all duration-300;
+  }
+
+  /* 2025-12-21：Dashboard 的 pipeline 列表按需求移除缩略图，仅保留文本；添加过渡让布局变化更平滑 */
+  .hx-pipe-list-item {
+    transition: background-color 200ms ease, border-color 200ms ease, transform 200ms ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hx-pipe-list-item {
+      transition: none;
+    }
+  }
+
+  .form-group-geek {
+    @apply relative pl-3 border-l border-border;
+  }
+  .form-group-geek::before {
+    content: '';
+    @apply absolute left-[-1px] top-0 w-[1px] h-2 bg-primary;
+  }
+
+  input, select {
+    @apply bg-[#111] border border-border text-textMain text-[10px] rounded-none p-2.5 tracking-wider outline-none focus:border-dim focus:bg-[#161616] transition-all !important;
+  }
+
+  @keyframes scanline {
+    0% { bottom: 100%; }
+    100% { bottom: -100px; }
+  }
+}
