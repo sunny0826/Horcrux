@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    /* Default (Dark) Theme */
     --bg-dark: #0a0a0a;
     --bg-panel: #141414;
     --primary-green: #00ff41;
@@ -12,14 +13,32 @@
     --text-main: #e0e0e0;
   }
 
+  /* Light Theme */
+  :root[data-theme="light"] {
+    --bg-dark: #ffffff;
+    --bg-panel: #f4f4f5; /* zinc-100 */
+    --primary-green: #16a34a; /* green-600 - Darker for readability on light bg */
+    --dim-green: #22c55e; /* green-500 */
+    --border-color: #e4e4e7; /* zinc-200 */
+    --text-main: #18181b; /* zinc-900 */
+  }
+
   body {
     @apply bg-background text-textMain font-mono overflow-hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Apply transitions to all elements that use theme colors for smooth switching */
+  *, *::before, *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
   }
 }
 
 @layer components {
   .geek-border {
-    @apply border border-border hover:border-dim transition-colors;
+    @apply border border-border hover:border-dim;
   }
 
   .hx-clamp-2 {
@@ -52,7 +71,7 @@
   }
 
   .react-flow__edge.hx-sync-edge .react-flow__edge-path {
-    stroke: #00ff41;
+    stroke: var(--primary-green);
     stroke-width: 2;
     stroke-dasharray: 8 6;
     animation: hx-edge-flow 420ms linear infinite;
@@ -113,7 +132,28 @@
   }
 
   input, select {
-    @apply bg-[#111] border border-border text-textMain text-[10px] rounded-none p-2.5 tracking-wider outline-none focus:border-dim focus:bg-[#161616] transition-all !important;
+    @apply bg-panel border border-border text-textMain text-[10px] rounded-none p-2.5 tracking-wider outline-none focus:border-dim focus:bg-background transition-all !important;
+  }
+
+  /* Custom Scrollbar for Cards */
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-green);
+  }
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: #222 transparent;
   }
 
   @keyframes scanline {

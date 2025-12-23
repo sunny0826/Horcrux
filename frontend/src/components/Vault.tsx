@@ -131,7 +131,7 @@ const Vault: React.FC = () => {
           <h2 className="text-xl font-bold text-primary flex items-center">
             <ShieldAlert className="mr-2" /> AUTH.VAULT
           </h2>
-          <p className="text-[#666] text-xs mt-1 uppercase tracking-widest">Secure_Credential_Storage (AES-256)</p>
+          <p className="text-textMain/60 text-xs mt-1 uppercase tracking-widest">Secure_Credential_Storage (AES-256)</p>
         </div>
         {!isAdding && (
           <button 
@@ -149,7 +149,7 @@ const Vault: React.FC = () => {
       </div>
 
       {isAdding && (
-        <div className="bg-[#111] border border-primary/30 p-6 relative animate-in fade-in slide-in-from-top-4 duration-300">
+        <div className="bg-panel border border-primary/30 p-6 relative animate-in fade-in slide-in-from-top-4 duration-300">
           <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-primary"></div>
           <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-primary"></div>
           <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-primary"></div>
@@ -164,11 +164,11 @@ const Vault: React.FC = () => {
           <form onSubmit={handleAdd} className="grid grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="form-group-geek">
-                <label className="text-[10px] text-[#444] block mb-1">REGISTRY_TYPE</label>
+                <label className="text-[10px] text-textMain/40 block mb-1">REGISTRY_TYPE</label>
                 <select 
                   value={newCred.type}
                   onChange={e => handleTypeChange(e.target.value)}
-                  className="w-full bg-[#111] border border-border text-textMain text-xs p-2 outline-none focus:border-primary transition-colors"
+                  className="w-full"
                 >
                   {registryTemplates.map(t => (
                     <option key={t.value} value={t.value}>{t.label}</option>
@@ -176,7 +176,7 @@ const Vault: React.FC = () => {
                 </select>
               </div>
               <div className="form-group-geek">
-                <label className="text-[10px] text-[#444] block mb-1">KEY_NAME</label>
+                <label className="text-[10px] text-textMain/40 block mb-1">KEY_NAME</label>
                 <input 
                   required
                   value={newCred.name}
@@ -188,7 +188,7 @@ const Vault: React.FC = () => {
             </div>
             <div className="space-y-4">
               <div className="form-group-geek">
-                <label className="text-[10px] text-[#444] block mb-1">REGISTRY_URL</label>
+                <label className="text-[10px] text-textMain/40 block mb-1">REGISTRY_URL</label>
                 <input 
                   required
                   value={newCred.registry}
@@ -198,7 +198,7 @@ const Vault: React.FC = () => {
                 />
               </div>
               <div className="form-group-geek">
-                <label className="text-[10px] text-[#444] block mb-1">IDENTITY_USERNAME</label>
+                <label className="text-[10px] text-textMain/40 block mb-1">IDENTITY_USERNAME</label>
                 <input 
                   required
                   value={newCred.username}
@@ -210,7 +210,7 @@ const Vault: React.FC = () => {
             </div>
             <div className="col-span-2 space-y-4">
               <div className="form-group-geek">
-                <label className="text-[10px] text-[#444] block mb-1">SECRET_ACCESS_TOKEN</label>
+                <label className="text-[10px] text-textMain/40 block mb-1">SECRET_ACCESS_TOKEN</label>
                 <input 
                   required={!editingId}
                   type="password"
@@ -245,12 +245,12 @@ const Vault: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {credentials.length === 0 ? (
-          <div className="col-span-full h-40 border border-dashed border-border flex items-center justify-center text-[#444] text-[10px] uppercase tracking-[0.2em]">
+          <div className="col-span-full h-40 border border-dashed border-border flex items-center justify-center text-textMain/40 text-[10px] uppercase tracking-[0.2em]">
             No_Credentials_Found_In_Vault
           </div>
         ) : (
           credentials.map(cred => (
-            <div key={cred.id} className="bg-[#0d0d0d] border border-border p-4 hover:border-primary/50 transition-all group relative">
+            <div key={cred.id} className="bg-panel border border-border p-4 hover:border-primary/50 transition-all group relative">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-primary/10 border border-primary/20 flex items-center justify-center">
@@ -265,7 +265,7 @@ const Vault: React.FC = () => {
                   {!isAdding && (
                     <button 
                       onClick={() => handleEdit(cred)}
-                      className="text-[#444] hover:text-primary transition p-1"
+                      className="text-textMain/40 hover:text-primary transition p-1"
                       title="Edit Key"
                     >
                       <Edit3 className="w-3.5 h-3.5" />
@@ -283,7 +283,7 @@ const Vault: React.FC = () => {
                       </button>
                       <button 
                         onClick={() => setConfirmDeleteId(null)}
-                        className="text-[9px] text-[#444] hover:text-textMain px-1 uppercase"
+                        className="text-[9px] text-textMain/40 hover:text-textMain px-1 uppercase"
                         disabled={deletingId === cred.id}
                       >
                         NO
@@ -292,7 +292,7 @@ const Vault: React.FC = () => {
                   ) : (
                     <button 
                       onClick={() => setConfirmDeleteId(cred.id)}
-                      className="text-[#444] hover:text-red-500 transition p-1"
+                      className="text-textMain/40 hover:text-red-500 transition p-1"
                       title="Delete Key"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -303,13 +303,13 @@ const Vault: React.FC = () => {
               
               <div className="space-y-2">
                 <div className="flex items-center text-[9px]">
-                  <Globe className="w-3 h-3 mr-2 text-[#444]" />
-                  <span className="text-[#666] w-16 uppercase">Registry:</span>
+                  <Globe className="w-3 h-3 mr-2 text-textMain/40" />
+                  <span className="text-textMain/60 w-16 uppercase">Registry:</span>
                   <span className="text-textMain truncate">{cred.registry}</span>
                 </div>
                 <div className="flex items-center text-[9px]">
-                  <User className="w-3 h-3 mr-2 text-[#444]" />
-                  <span className="text-[#666] w-16 uppercase">Identity:</span>
+                  <User className="w-3 h-3 mr-2 text-textMain/40" />
+                  <span className="text-textMain/60 w-16 uppercase">Identity:</span>
                   <span className="text-textMain">{cred.username}</span>
                 </div>
               </div>
@@ -335,8 +335,8 @@ const Vault: React.FC = () => {
                         onClick={() => verifyCredential(cred.id)}
                         className={`text-[8px] uppercase flex items-center transition-colors ${
                           verificationStatus[cred.id] 
-                            ? 'text-[#444] hover:text-primary' 
-                            : 'text-[#444] hover:text-primary underline'
+                            ? 'text-textMain/40 hover:text-primary' 
+                            : 'text-textMain/40 hover:text-primary underline'
                         }`}
                         title={verificationStatus[cred.id] ? "Retry Verification" : "Verify Now"}
                         disabled={verificationStatus[cred.id] === 'idle'}
@@ -349,7 +349,7 @@ const Vault: React.FC = () => {
                     </div>
                   )}
                 </div>
-                <span className="text-[8px] text-[#444]">TYPE: {cred.type.toUpperCase()}</span>
+                <span className="text-[8px] text-textMain/40">TYPE: {cred.type.toUpperCase()}</span>
               </div>
             </div>
           ))

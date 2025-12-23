@@ -14,6 +14,7 @@ import (
 	"github.com/google/go-containerregistry/pkg/name"
 	v1 "github.com/google/go-containerregistry/pkg/v1"
 	"github.com/google/go-containerregistry/pkg/v1/empty"
+	"github.com/google/go-containerregistry/pkg/v1/layout"
 	"github.com/google/go-containerregistry/pkg/v1/mutate"
 	"github.com/google/go-containerregistry/pkg/v1/remote"
 	"github.com/google/go-containerregistry/pkg/v1/tarball"
@@ -22,12 +23,13 @@ import (
 
 // SyncOptions defines the options for a synchronization task
 type SyncOptions struct {
-	SourceRef   string
-	TargetRef   string
-	SourceAuth  *vault.Credential
-	TargetAuth  *vault.Credential
-	Incremental bool
-	Concurrency int
+	SourceRef        string
+	TargetRef        string
+	SourceAuth       *vault.Credential
+	TargetAuth       *vault.Credential
+	Incremental      bool
+	Concurrency      int
+	SourceLayoutPath string // Path to local OCI layout if SourceRef is archive://
 }
 
 // Progress defines a progress update from the syncer
@@ -277,11 +279,6 @@ func (s *Syncer) getAuth(cred *vault.Credential) authn.Authenticator {
 
 // SyncImage synchronizes an image from source to target
 func (s *Syncer) SyncImage(opts SyncOptions) error {
-	src, err := name.ParseReference(opts.SourceRef)
-	if err != nil {
-		return fmt.Errorf("failed to parse source reference: %v", err)
-	}
-
 	dst, err := name.ParseReference(opts.TargetRef)
 	if err != nil {
 		return fmt.Errorf("failed to parse target reference: %v", err)
@@ -289,11 +286,35 @@ func (s *Syncer) SyncImage(opts SyncOptions) error {
 
 	s.logProgress("SYNC", fmt.Sprintf("Syncing %s to %s...", opts.SourceRef, opts.TargetRef), "start", 0.15)
 
-	// Fetch the source image
-	s.logProgress("SYNC", "Fetching source image...", "fetch_source", 0.35)
-	img, err := remote.Image(src, s.remoteOptions(s.ctx, s.getAuth(opts.SourceAuth))...)
-	if err != nil {
-		return fmt.Errorf("failed to fetch source image: %w", err)
+	var img v1.Image
+	if opts.SourceLayoutPath != "" {
+		s.logProgress("SYNC", "Loading source from local layout...", "fetch_source", 0.35)
+		l, err := layout.ImageIndexFromPath(opts.SourceLayoutPath)
+		if err != nil {
+			return fmt.Errorf("failed to load local layout from %s: %w", opts.SourceLayoutPath, err)
+		}
+		// Try to find the image in the layout
+		idx, err := l.IndexManifest()
+		if err != nil || len(idx.Manifests) == 0 {
+			return fmt.Errorf("empty layout or invalid index manifest")
+		}
+		// Just take the first image if it's a single image sync fallback
+		img, err = l.Image(idx.Manifests[0].Digest)
+		if err != nil {
+			return fmt.Errorf("failed to get image from layout: %w", err)
+		}
+	} else {
+		src, err := name.ParseReference(opts.SourceRef)
+		if err != nil {
+			return fmt.Errorf("failed to parse source reference: %v", err)
+		}
+
+		// Fetch the source image
+		s.logProgress("SYNC", "Fetching source image...", "fetch_source", 0.35)
+		img, err = remote.Image(src, s.remoteOptions(s.ctx, s.getAuth(opts.SourceAuth))...)
+		if err != nil {
+			return fmt.Errorf("failed to fetch source image: %w", err)
+		}
 	}
 
 	// Push the image to the target
@@ -381,11 +402,6 @@ func (s *Syncer) MergeManifests(sourceRefs []string, targetRef string, srcAuths 
 
 // SyncManifestList synchronizes a manifest list (multi-arch image)
 func (s *Syncer) SyncManifestList(opts SyncOptions) error {
-	src, err := name.ParseReference(opts.SourceRef)
-	if err != nil {
-		return fmt.Errorf("failed to parse source reference: %v", err)
-	}
-
 	dst, err := name.ParseReference(opts.TargetRef)
 	if err != nil {
 		return fmt.Errorf("failed to parse target reference: %v", err)
@@ -393,11 +409,26 @@ func (s *Syncer) SyncManifestList(opts SyncOptions) error {
 
 	s.logProgress("SYNC", fmt.Sprintf("Syncing manifest list %s to %s...", opts.SourceRef, opts.TargetRef), "start", 0.15)
 
-	s.logProgress("SYNC", "Fetching source manifest list...", "fetch_source", 0.35)
-	idx, err := remote.Index(src, s.remoteOptions(s.ctx, s.getAuth(opts.SourceAuth))...)
-	if err != nil {
-		// If it's not an index, try syncing as a regular image
-		return s.SyncImage(opts)
+	var idx v1.ImageIndex
+	if opts.SourceLayoutPath != "" {
+		s.logProgress("SYNC", "Loading source from local layout...", "fetch_source", 0.35)
+		l, err := layout.ImageIndexFromPath(opts.SourceLayoutPath)
+		if err != nil {
+			return fmt.Errorf("failed to load local layout from %s: %w", opts.SourceLayoutPath, err)
+		}
+		idx = l
+	} else {
+		src, err := name.ParseReference(opts.SourceRef)
+		if err != nil {
+			return fmt.Errorf("failed to parse source reference: %v", err)
+		}
+
+		s.logProgress("SYNC", "Fetching source manifest list...", "fetch_source", 0.35)
+		idx, err = remote.Index(src, s.remoteOptions(s.ctx, s.getAuth(opts.SourceAuth))...)
+		if err != nil {
+			// If it's not an index, try syncing as a regular image
+			return s.SyncImage(opts)
+		}
 	}
 
 	s.logProgress("SYNC", "Pushing manifest list to target...", "push_target", 0.75)

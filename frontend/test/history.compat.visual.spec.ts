@@ -12,7 +12,7 @@ test('Sync.History 兼容展示新旧任务格式', async ({ page }) => {
       contentType: 'application/json',
       body: JSON.stringify({
         active_threads: 0,
-        data_throughput: '0 GB',
+        total_data_size: '0 GB',
         manifest_assets: 1,
         auth_keys: 0,
       }),

@@ -1,0 +1,63 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Glow effect for neon aesthetic -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Stronger glow for cursor -->
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Gradient for depth -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f0f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#050505;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Transparent background for proper spacing -->
+  <rect width="1024" height="1024" fill="none"/>
+  
+  <!-- Main icon content with padding (90px padding on all sides = ~8.8% safe margin) -->
+  <!-- Icon fills 844x844 area centered in 1024x1024 canvas -->
+  <g transform="translate(90, 90)">
+    <!-- Background with rounded corners (18.5% of 844 = 156px radius) -->
+    <rect width="844" height="844" rx="156" fill="url(#bgGradient)"/>
+    
+    <!-- macOS traffic light buttons -->
+    <circle cx="70" cy="70" r="16" fill="#FF5F57" opacity="0.95">
+      <animate attributeName="opacity" values="0.95;0.7;0.95" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="120" cy="70" r="16" fill="#FFBD2E" opacity="0.95">
+      <animate attributeName="opacity" values="0.95;0.7;0.95" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="170" cy="70" r="16" fill="#28CA42" opacity="0.95">
+      <animate attributeName="opacity" values="0.95;0.7;0.95" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Terminal content - simplified to $ H -->
+    <g>
+      <!-- Prompt symbol $ - enlarged -->
+      <text x="140" y="520" font-family="'SF Mono', 'Monaco', 'Menlo', monospace" font-size="280" font-weight="700" fill="#00ff41" filter="url(#glow)">$</text>
+      
+      <!-- H letter - enlarged -->
+      <text x="380" y="520" font-family="'SF Mono', 'Monaco', 'Menlo', monospace" font-size="280" font-weight="700" fill="#00ff41" filter="url(#glow)">H</text>
+      
+      <!-- Blinking cursor - enlarged and repositioned -->
+      <rect x="680" y="280" width="50" height="280" rx="5" fill="#00ff41" filter="url(#strongGlow)">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+</svg>

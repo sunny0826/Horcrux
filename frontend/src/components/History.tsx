@@ -207,7 +207,7 @@ const HistoryView: React.FC = () => {
       case 'success': return <CheckCircle2 className="w-3 h-3 text-primary" />;
       case 'failed': return <XCircle className="w-3 h-3 text-red-500" />;
       case 'running': return <Loader2 className="w-3 h-3 text-blue-400 animate-spin" />;
-      default: return <History className="w-3 h-3 text-[#444]" />;
+      default: return <History className="w-3 h-3 text-textMain/40" />;
     }
   };
 
@@ -215,7 +215,7 @@ const HistoryView: React.FC = () => {
     return <span className={`text-[8px] font-bold uppercase ${
       status === 'success' ? 'text-primary' : 
       status === 'failed' ? 'text-red-500' : 
-      status === 'running' ? 'text-blue-400' : 'text-[#444]'
+      status === 'running' ? 'text-blue-400' : 'text-textMain/40'
     }`}>{status}</span>;
   };
 
@@ -227,7 +227,7 @@ const HistoryView: React.FC = () => {
             <History className="w-5 h-5 mr-2" />
             Sync_Execution_Logs
           </h2>
-          <p className="text-[10px] text-[#444] mt-1 font-mono">
+          <p className="text-[10px] text-textMain/40 mt-1 font-mono">
             {loading ? '> QUERYING_DATABASE...' : `> QUERYING_DATABASE... [MATCH_FOUND: ${filteredTasks.length}_RECORDS]`}
           </p>
           {notice && (
@@ -261,14 +261,14 @@ const HistoryView: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between bg-[#111] border border-[#222] p-2 gap-4">
+      <div className="flex items-center justify-between bg-panel border border-border p-2 gap-4">
         <div className="flex space-x-1 shrink-0">
           <button
             onClick={() => setStatusFilter('all')}
             className={`px-4 py-1.5 text-[9px] font-bold uppercase tracking-wider border transition ${
               statusFilter === 'all'
                 ? 'bg-primary/10 text-primary border-primary/30'
-                : 'text-[#444] border-transparent hover:text-[#e0e0e0]'
+                : 'text-textMain/40 border-transparent hover:text-textMain'
             }`}
           >
             All_Tasks
@@ -278,7 +278,7 @@ const HistoryView: React.FC = () => {
             className={`px-4 py-1.5 text-[9px] font-bold uppercase tracking-wider border transition ${
               statusFilter === 'success'
                 ? 'bg-primary/10 text-primary border-primary/30'
-                : 'text-[#444] border-transparent hover:text-[#e0e0e0]'
+                : 'text-textMain/40 border-transparent hover:text-textMain'
             }`}
           >
             Completed
@@ -288,7 +288,7 @@ const HistoryView: React.FC = () => {
             className={`px-4 py-1.5 text-[9px] font-bold uppercase tracking-wider border transition ${
               statusFilter === 'failed'
                 ? 'bg-primary/10 text-primary border-primary/30'
-                : 'text-[#444] border-transparent hover:text-[#e0e0e0]'
+                : 'text-textMain/40 border-transparent hover:text-textMain'
             }`}
           >
             Failed
@@ -298,7 +298,7 @@ const HistoryView: React.FC = () => {
             className={`px-4 py-1.5 text-[9px] font-bold uppercase tracking-wider border transition ${
               statusFilter === 'running'
                 ? 'bg-primary/10 text-primary border-primary/30'
-                : 'text-[#444] border-transparent hover:text-[#e0e0e0]'
+                : 'text-textMain/40 border-transparent hover:text-textMain'
             }`}
           >
             Running
@@ -306,7 +306,7 @@ const HistoryView: React.FC = () => {
         </div>
 
         <div className="relative w-full max-w-[320px]">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3 h-3 text-[#333]" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3 h-3 text-textMain/40" />
           <input
             type="text"
             placeholder="FILTER_BY_IMAGE_NAME..."
@@ -317,10 +317,10 @@ const HistoryView: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex-1 overflow-hidden border border-[#222] bg-[#0d0d0d]">
+      <div className="flex-1 overflow-hidden border border-border bg-panel">
         <div className="w-full h-full overflow-auto">
           <table className="w-full text-left font-mono text-[10px] min-w-[920px]">
-            <thead className="bg-[#1a1a1a] border-b border-[#222] text-[#444] sticky top-0 z-10">
+            <thead className="bg-background/40 border-b border-border text-textMain/60 sticky top-0 z-10">
               <tr>
                 <th className="px-6 py-4">JOB_ID</th>
                 <th className="px-6 py-4">IMAGE_IDENTITY</th>
@@ -331,11 +331,11 @@ const HistoryView: React.FC = () => {
                 <th className="px-6 py-4 text-right">ACTION</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#222] text-[#888]">
+            <tbody className="divide-y divide-border text-textMain/60">
               {loading ? (
                 <tr>
                   <td colSpan={7} className="px-6 py-10">
-                    <div className="flex items-center justify-center text-[#444] text-[10px] uppercase italic">
+                    <div className="flex items-center justify-center text-textMain/40 text-[10px] uppercase italic">
                       <Loader2 className="w-4 h-4 mr-2 text-primary animate-spin" />
                       Loading...
                     </div>
@@ -344,7 +344,7 @@ const HistoryView: React.FC = () => {
               ) : filteredTasks.length === 0 ? (
                 <tr>
                   <td colSpan={7} className="px-6 py-10">
-                    <div className="text-center text-[#444] text-[10px] uppercase italic">
+                    <div className="text-center text-textMain/40 text-[10px] uppercase italic">
                       No_tasks_found
                     </div>
                   </td>
@@ -358,7 +358,7 @@ const HistoryView: React.FC = () => {
                   return (
                     <tr
                       key={task.id}
-                      className="hover:bg-[#151515] group cursor-pointer"
+                      className="hover:bg-background/40 group cursor-pointer"
                       onClick={() => openTaskDetail(task.id)}
                     >
                       <td className="px-6 py-4 text-primary font-bold">
@@ -366,17 +366,17 @@ const HistoryView: React.FC = () => {
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex flex-col">
-                          <span className="text-[#e0e0e0] font-bold break-all">{identity.primary}</span>
+                          <span className="text-textMain font-bold break-all">{identity.primary}</span>
                           {identity.secondary ? (
-                            <span className="text-[8px] text-[#444]">{identity.secondary}</span>
+                            <span className="text-[8px] text-textMain/40">{identity.secondary}</span>
                           ) : (
-                            <span className="text-[8px] text-[#444]">---</span>
+                            <span className="text-[8px] text-textMain/40">---</span>
                           )}
                         </div>
                       </td>
                       <td className="px-6 py-4">{srcHost} -&gt; {dstHost}</td>
                       <td className="px-6 py-4">{getDurationText(task.created_at, task.ended_at)}</td>
-                      <td className="px-6 py-4 text-[#444]">{formatDateTime(task.created_at)}</td>
+                      <td className="px-6 py-4 text-textMain/40">{formatDateTime(task.created_at)}</td>
                       <td className="px-6 py-4">
                         <span className="flex items-center">
                           <span className="mr-2">{getStatusIcon(task.status)}</span>
@@ -384,7 +384,7 @@ const HistoryView: React.FC = () => {
                         </span>
                       </td>
                       <td className="px-6 py-4 text-right">
-                        <ChevronRight className="inline-block w-4 h-4 text-[#222] group-hover:text-primary transition" />
+                        <ChevronRight className="inline-block w-4 h-4 text-textMain/30 group-hover:text-primary transition" />
                       </td>
                     </tr>
                   );
@@ -397,13 +397,13 @@ const HistoryView: React.FC = () => {
 
       {detailOpen && (
         <div
-          className="absolute inset-0 bg-black/70 flex items-center justify-center p-6"
+          className="absolute inset-0 z-30 bg-black/70 flex items-center justify-center p-6"
           onMouseDown={(e) => {
             if (e.target === e.currentTarget) closeTaskDetail();
           }}
         >
-          <div className="w-full max-w-5xl bg-[#0d0d0d] border border-[#222] overflow-hidden">
-            <div className="flex items-center justify-between p-4 border-b border-[#222] bg-[#111]">
+          <div className="w-full max-w-5xl bg-panel border border-border overflow-hidden">
+            <div className="flex items-center justify-between p-4 border-b border-border bg-panel">
               <div className="min-w-0">
                 <div className="flex items-center space-x-3">
                   <h3 className="text-[12px] font-bold text-primary uppercase tracking-widest truncate">
@@ -417,7 +417,7 @@ const HistoryView: React.FC = () => {
                   )}
                   {loadingDetails && <Loader2 className="w-4 h-4 text-primary animate-spin" />}
                 </div>
-                <div className="mt-2 flex flex-wrap gap-x-6 gap-y-1 text-[9px] text-[#666] uppercase">
+                <div className="mt-2 flex flex-wrap gap-x-6 gap-y-1 text-[9px] text-textMain/40 uppercase">
                   <span>Created_at: {formatDateTime(selectedTask?.created_at)}</span>
                   <span>Duration: {getDurationText(selectedTask?.created_at, selectedTask?.ended_at)}</span>
                   {selectedTask?.cancel_requested && <span className="text-red-500">Cancel_requested</span>}
@@ -445,17 +445,17 @@ const HistoryView: React.FC = () => {
             </div>
 
             <div className="p-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <div className="bg-[#111] border border-[#222] p-4">
-                <div className="text-[9px] text-[#444] uppercase mb-2">Source_Ref</div>
+              <div className="bg-background border border-border p-4">
+                <div className="text-[9px] text-textMain/40 uppercase mb-2">Source_Ref</div>
                 <div className="text-[10px] text-textMain break-all">{selectedTask?.source_ref || '---'}</div>
               </div>
-              <div className="bg-[#111] border border-[#222] p-4">
-                <div className="text-[9px] text-[#444] uppercase mb-2">Target_Ref</div>
+              <div className="bg-background border border-border p-4">
+                <div className="text-[9px] text-textMain/40 uppercase mb-2">Target_Ref</div>
                 <div className="text-[10px] text-textMain break-all">{selectedTask?.target_ref || '---'}</div>
               </div>
               {selectedTask?.error_summary && (
-                <div className="bg-[#111] border border-[#222] p-4 lg:col-span-2">
-                  <div className="text-[9px] text-[#444] uppercase mb-2">Error_Summary</div>
+                <div className="bg-background border border-border p-4 lg:col-span-2">
+                  <div className="text-[9px] text-textMain/40 uppercase mb-2">Error_Summary</div>
                   <div className="text-[10px] text-red-500 break-all">{selectedTask.error_summary}</div>
                 </div>
               )}
@@ -463,17 +463,17 @@ const HistoryView: React.FC = () => {
 
             <div className="px-4 pb-4">
               <div className="flex items-center justify-between mb-2">
-                <h4 className="text-[10px] font-bold text-[#666] uppercase tracking-widest flex items-center">
+                <h4 className="text-[10px] font-bold text-textMain/60 uppercase tracking-widest flex items-center">
                   <Terminal className="w-3.5 h-3.5 mr-2 text-primary" />
                   Task_Execution_Logs
                 </h4>
               </div>
               <div
                 ref={logRef}
-                className="h-[360px] bg-black/40 border border-[#222] p-4 font-mono text-[10px] overflow-y-auto scrollbar-hide space-y-1 scroll-smooth"
+                className="h-[360px] bg-background/40 border border-border p-4 font-mono text-[10px] overflow-y-auto scrollbar-hide space-y-1 scroll-smooth"
               >
                 {loadingDetails ? (
-                  <div className="flex items-center justify-center h-20 text-[#444] text-[10px] uppercase italic">
+                  <div className="flex items-center justify-center h-20 text-textMain/40 text-[10px] uppercase italic">
                     Loading_Logs...
                   </div>
                 ) : selectedTask?.logs && selectedTask.logs.length > 0 ? (
@@ -483,7 +483,7 @@ const HistoryView: React.FC = () => {
                     </div>
                   ))
                 ) : (
-                  <div className="text-[#333] italic text-[9px] uppercase tracking-widest">No logs available for this task</div>
+                  <div className="text-textMain/40 italic text-[9px] uppercase tracking-widest">No logs available for this task</div>
                 )}
               </div>
             </div>

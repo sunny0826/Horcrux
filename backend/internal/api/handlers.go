@@ -896,15 +896,15 @@ func (h *Handler) ListRegistryTags(c *gin.Context) {
 			reqErr,
 			detail,
 		)
-		msg := "版本标签查询失败"
+		msg := "failed to query tags"
 		if statusCode == http.StatusUnauthorized {
-			msg = "镜像仓库鉴权失败"
+			msg = "registry authentication failed"
 		} else if statusCode == http.StatusForbidden {
-			msg = "镜像仓库权限不足"
+			msg = "insufficient registry permissions"
 		} else if statusCode >= 500 {
-			msg = "镜像仓库暂时不可用"
+			msg = "registry temporarily unavailable"
 		} else if statusCode == 0 {
-			msg = "镜像仓库网络请求失败"
+			msg = "registry network request failed"
 		}
 		c.JSON(http.StatusBadGateway, gin.H{"error": msg, "upstream_status": statusCode, "detail": detail})
 		return
@@ -1086,11 +1086,18 @@ func (h *Handler) GetStats(c *gin.Context) {
 
 	fmt.Printf("[API] GetStats: creds=%d, tasks=%d, active=%d\n", len(creds), totalTasks, activeTasks)
 
+	dataDir := h.getDataPath("")
+	dataSize, _ := getDirSize(dataDir)
+	throughputDisplay := formatBytes(dataSize)
+
+	fmt.Printf("[API] GetStats: creds=%d, tasks=%d, active=%d, data_size=%s\n", len(creds), totalTasks, activeTasks, throughputDisplay)
+
 	c.JSON(http.StatusOK, gin.H{
 		"auth_keys":       len(creds),
 		"active_threads":  activeTasks,
+		"total_tasks":     totalTasks,
 		"manifest_assets": totalTasks,
-		"data_throughput": "0 GB", // Placeholder
+		"total_data_size": throughputDisplay,
 	})
 }
 
@@ -1742,9 +1749,27 @@ func (h *Handler) ListPipes(c *gin.Context) {
 	id := strings.TrimSpace(c.Query("id"))
 	name := strings.TrimSpace(c.Query("name"))
 	metaOnly := strings.TrimSpace(c.Query("meta_only")) == "1"
+	withTotal := strings.TrimSpace(c.Query("with_total")) == "1"
+
+	limit := 0
+	offset := 0
+	if raw := strings.TrimSpace(c.Query("limit")); raw != "" {
+		if v, err := strconv.Atoi(raw); err == nil && v > 0 {
+			limit = v
+		}
+	}
+	if raw := strings.TrimSpace(c.Query("offset")); raw != "" {
+		if v, err := strconv.Atoi(raw); err == nil && v > 0 {
+			offset = v
+		}
+	}
 
 	pipesDir := h.getDataPath("pipes")
 	if _, err := os.Stat(pipesDir); os.IsNotExist(err) {
+		if withTotal {
+			c.JSON(http.StatusOK, gin.H{"items": []Pipe{}, "total": 0})
+			return
+		}
 		c.JSON(http.StatusOK, []Pipe{})
 		return
 	}
@@ -1783,7 +1808,27 @@ func (h *Handler) ListPipes(c *gin.Context) {
 	sort.Slice(pipes, func(i, j int) bool {
 		return pipes[i].UpdatedAt.After(pipes[j].UpdatedAt)
 	})
-	c.JSON(http.StatusOK, pipes)
+
+	total := len(pipes)
+	out := pipes
+	if limit > 0 {
+		if offset >= total {
+			out = []Pipe{}
+		} else {
+			end := offset + limit
+			if end > total {
+				end = total
+			}
+			out = pipes[offset:end]
+		}
+		c.Header("X-Total-Count", strconv.Itoa(total))
+	}
+
+	if withTotal {
+		c.JSON(http.StatusOK, gin.H{"items": out, "total": total})
+		return
+	}
+	c.JSON(http.StatusOK, out)
 }
 
 func (h *Handler) GetPipe(c *gin.Context) {
@@ -2772,11 +2817,14 @@ func (h *Handler) runSingleTargetSync(
 			}
 		}(task.Targets[targetIdx].TargetRef)
 
+		layoutPath, _ := h.resolveArchiveRef(task.SourceRef)
+
 		opts := engine.SyncOptions{
-			SourceRef:  task.SourceRef,
-			TargetRef:  task.Targets[targetIdx].TargetRef,
-			SourceAuth: srcAuth,
-			TargetAuth: getTargetAuth(task.Targets[targetIdx].TargetID),
+			SourceRef:        task.SourceRef,
+			TargetRef:        task.Targets[targetIdx].TargetRef,
+			SourceAuth:       srcAuth,
+			TargetAuth:       getTargetAuth(task.Targets[targetIdx].TargetID),
+			SourceLayoutPath: layoutPath,
 		}
 
 		err := runner.SyncManifestList(opts)
@@ -2917,4 +2965,54 @@ func isRetryableError(err error) bool {
 	default:
 		return false
 	}
+}
+
+func (h *Handler) resolveArchiveRef(ref string) (string, error) {
+	if !strings.HasPrefix(ref, "archive://") {
+		return "", nil
+	}
+	id := strings.TrimPrefix(ref, "archive://")
+
+	// Ensure metadata is loaded
+	if err := h.loadArchivesMeta(); err != nil {
+		return "", err
+	}
+
+	archivesMu.Lock()
+	defer archivesMu.Unlock()
+
+	for _, m := range archivesMeta {
+		if m.ID == id {
+			return m.Path, nil
+		}
+	}
+
+	return "", fmt.Errorf("archive not found: %s", id)
+}
+
+func getDirSize(path string) (int64, error) {
+	var size int64
+	err := filepath.Walk(path, func(_ string, info os.FileInfo, err error) error {
+		if err != nil {
+			return nil
+		}
+		if !info.IsDir() {
+			size += info.Size()
+		}
+		return nil
+	})
+	return size, err
+}
+
+func formatBytes(b int64) string {
+	const unit = 1024
+	if b < unit {
+		return fmt.Sprintf("%d B", b)
+	}
+	div, exp := int64(unit), 0
+	for n := b / unit; n >= unit; n /= unit {
+		div *= unit
+		exp++
+	}
+	return fmt.Sprintf("%.2f %cB", float64(b)/float64(div), "KMGTPE"[exp])
 }

@@ -16,6 +16,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	serverPort    string
+	serverDataDir string
+)
+
 var serveCmd = &cobra.Command{
 	Use:   "serve",
 	Short: "Start the Horcrux web server",
@@ -25,6 +30,8 @@ var serveCmd = &cobra.Command{
 }
 
 func init() {
+	serveCmd.Flags().StringVar(&serverPort, "port", "", "Port to run the server on")
+	serveCmd.Flags().StringVar(&serverDataDir, "data-dir", "", "Directory to store data")
 	rootCmd.AddCommand(serveCmd)
 }
 
@@ -45,7 +52,11 @@ func startServer() {
 
 	h := api.NewHandler(v, hub)
 
-	r := gin.Default()
+	r := gin.New()
+	r.Use(gin.Logger())
+	r.Use(gin.Recovery())
+	r.RedirectTrailingSlash = false
+	r.RedirectFixedPath = false
 
 	if isDevMode() {
 		viteProxy := createViteProxy()
@@ -127,6 +138,14 @@ func startServer() {
 			registryGroup.GET("/repositories", h.ListRegistryRepositories)
 			registryGroup.GET("/tags", h.ListRegistryTags)
 		}
+
+		archivesGroup := apiGroup.Group("/archives")
+		{
+			archivesGroup.GET("", h.ListArchives)
+			archivesGroup.POST("/upload", h.UploadArchive)
+			archivesGroup.POST("/merge", h.MergeArchives)
+			archivesGroup.DELETE("/:id", h.DeleteArchive)
+		}
 	}
 
 	port := resolvePort()
@@ -138,6 +157,9 @@ func startServer() {
 }
 
 func resolvePort() string {
+	if serverPort != "" {
+		return serverPort
+	}
 	port := os.Getenv("PORT")
 	if port == "" {
 		return "7626"
@@ -171,6 +193,13 @@ func createViteProxy() *httputil.ReverseProxy {
 }
 
 func resolveVaultPath() string {
+	if serverDataDir != "" {
+		// Ensure directory exists
+		if _, err := os.Stat(serverDataDir); os.IsNotExist(err) {
+			os.MkdirAll(serverDataDir, 0755)
+		}
+		return filepath.Join(serverDataDir, "vault.enc")
+	}
 	if _, err := os.Stat("data/vault.enc"); err == nil {
 		return "data/vault.enc"
 	}

@@ -1414,3 +1414,38 @@ func TestRegistryQueryEndpoints(t *testing.T) {
 	assert.NoError(t, json.Unmarshal(w4.Body.Bytes(), &tagsResp2))
 	assert.Equal(t, true, tagsResp2["cached"])
 }
+
+func TestGetStatsDataThroughput(t *testing.T) {
+	gin.SetMode(gin.TestMode)
+	tempDir, err := os.MkdirTemp("", "horcrux-stats-test-*")
+	assert.NoError(t, err)
+	defer os.RemoveAll(tempDir)
+
+	v, err := vault.NewVault(filepath.Join(tempDir, "vault.enc"), "12345678901234567890123456789012")
+	assert.NoError(t, err)
+
+	h := NewHandler(v, NewHub())
+
+	// Write 1024 bytes -> 1.00 KB
+	dummyFile := filepath.Join(tempDir, "dummy.dat")
+	data := make([]byte, 1024)
+	err = os.WriteFile(dummyFile, data, 0644)
+	assert.NoError(t, err)
+
+	r := gin.Default()
+	r.GET("/api/stats", h.GetStats)
+
+	req, _ := http.NewRequest("GET", "/api/stats", nil)
+	w := httptest.NewRecorder()
+	r.ServeHTTP(w, req)
+
+	assert.Equal(t, http.StatusOK, w.Code)
+	var response map[string]interface{}
+	err = json.Unmarshal(w.Body.Bytes(), &response)
+	assert.NoError(t, err)
+
+	// Verify total_data_size
+	val, ok := response["total_data_size"].(string)
+	assert.True(t, ok)
+	assert.Equal(t, "1.00 KB", val)
+}
