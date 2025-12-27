@@ -1,7 +1,8 @@
 
 <div align="center">
-    <img src="frontend/horcrux-logo.svg" alt="Horcrux Logo" width="50"> 
+    <img src="frontend/horcrux-logo.svg" alt="Horcrux Logo" width="160">
     <h1>Horcrux</h1>
+    <p><strong>炫酷 · 自动化 · 可视化</strong></p>
 </div>
 
 Horcrux 是一个现代化的容器镜像同步工具，旨在提供安全、高效且可视化的跨仓库镜像同步解决方案。它结合了直观的拖拽式工作流设计器和强大的后台同步引擎，让复杂的镜像迁移任务变得简单可控。
