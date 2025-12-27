@@ -1,4 +1,4 @@
-# <img src="frontend/horcrux-logo.svg" alt="Horcrux Logo" width="30"> Horcrux
+# <img src="frontend/horcrux-logo.svg" alt="Horcrux Logo" width="50"> Horcrux
 
 
 
