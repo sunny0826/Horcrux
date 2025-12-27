@@ -1,8 +1,19 @@
-# Horcrux
+# <img src="frontend/horcrux-logo.svg" alt="Horcrux Logo" width="30"> Horcrux
 
-![Horcrux Logo](frontend/horcrux-logo.svg)
+
 
 Horcrux 是一个现代化的容器镜像同步工具，旨在提供安全、高效且可视化的跨仓库镜像同步解决方案。它结合了直观的拖拽式工作流设计器和强大的后台同步引擎，让复杂的镜像迁移任务变得简单可控。
+
+## 📦 安装
+
+### macOS
+
+在 Release 页面下载 Horcrux.dmg 文件后，双击打开，将 Horcrux.app 拖动到 Applications 文件夹即可。
+
+> 由于 macOS 的 Gatekeeper 机制，需要执行以下命令来允许 Horcrux 运行：
+> ```bash
+> sudo xattr -cr /Applications/Horcrux.app
+> ```
 
 ## ✨ 主要特性
 
