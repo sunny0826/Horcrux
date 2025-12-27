@@ -1,83 +1,86 @@
-
 <div align="center">
     <img src="frontend/horcrux-logo.svg" alt="Horcrux Logo" width="160">
     <h1>Horcrux</h1>
-    <p><strong>炫酷 · 自动化 · 可视化</strong></p>
+    <p><strong>Cool · Automated · Visualized</strong></p>
 </div>
 
-Horcrux 是一个现代化的容器镜像同步工具，旨在提供安全、高效且可视化的跨仓库镜像同步解决方案。它结合了直观的拖拽式工作流设计器和强大的后台同步引擎，让复杂的镜像迁移任务变得简单可控。
+<div align="center">
+    <a href="./README.md">🇺🇸 English</a> | <a href="./README-zh.md">🇨🇳 简体中文</a>
+</div>
 
-## 📦 安装
+Horcrux is a modern container image synchronization tool designed to provide a secure, efficient, and visualized solution for cross-registry image synchronization. It combines an intuitive drag-and-drop workflow designer with a powerful background synchronization engine, making complex image migration tasks simple and controllable.
+
+## 📦 Installation
 
 ### macOS
 
-在 Release 页面下载 Horcrux.dmg 文件后，双击打开，将 Horcrux.app 拖动到 Applications 文件夹即可。
+Download the `Horcrux.dmg` file from the [Releases](https://github.com/StartDT/Horcrux/releases) page, double-click to open it, and drag `Horcrux.app` to your Applications folder.
 
-> 由于 macOS 的 Gatekeeper 机制，需要执行以下命令来允许 Horcrux 运行：
+> Due to macOS Gatekeeper mechanisms, you may need to execute the following command to allow Horcrux to run:
 > ```bash
 > sudo xattr -cr /Applications/Horcrux.app
 > ```
 
-## ✨ 主要特性
+## ✨ Key Features
 
--   **🖥️ Core Dashboard**: 实时监控系统状态、任务运行概览及核心指标。
--   **🎨 Flow Designer**: 可视化工作流设计器。支持通过拖拽 Source（源）和 Target（目标）节点快速创建同步管道。
--   **🔐 Auth Vault**: 安全的凭证管理中心。集中管理各类 Registry 的认证信息，确保敏感数据安全。
--   **📜 Sync History**: 详尽的任务历史记录。提供每一次同步任务的完整日志和状态追踪。
--   **📱 响应式设计**: 全新优化的 UI，完美适配桌面端、平板和移动端设备。
+-   **🖥️ Core Dashboard**: Real-time monitoring of system status, task overview, and core metrics.
+-   **🎨 Flow Designer**: Visual workflow designer. Quickly create synchronization pipelines by dragging and dropping Source and Target nodes.
+-   **🔐 Auth Vault**: Secure credential management center. Centrally manages authentication information for various registries to ensure sensitive data security.
+-   **📜 Sync History**: Detailed task history records. Provides complete logs and status tracking for every synchronization task.
+-   **📱 Responsive Design**: Brand new optimized UI, perfectly adapting to desktop, tablet, and mobile devices.
 
-## 🛠️ 开发指南
+## 🛠️ Development Guide
 
-本项目采用 Tauri + React (Frontend) + Go (Backend Sidecar) 架构。
+This project adopts the **Tauri + React (Frontend) + Go (Backend Sidecar)** architecture.
 
-### 环境要求
+### Prerequisites
 
 *   Node.js & pnpm
 *   Go (>= 1.21)
-*   Rust & Cargo (用于 Tauri 构建)
+*   Rust & Cargo (for Tauri build)
 
-### 快速开始
+### Quick Start
 
-1.  **安装依赖**:
+1.  **Install Dependencies**:
     ```bash
     make install
     ```
 
-2.  **启动开发环境 (Tauri + Sidecar)**:
-    这是推荐的开发模式，会同时启动前端界面和后端 Sidecar 服务。
+2.  **Start Development Environment (Tauri + Sidecar)**:
+    This is the recommended development mode, which starts both the frontend interface and the backend Sidecar service.
     ```bash
     make dev
     ```
 
-3.  **仅 Web 开发模式**:
-    如果您只需要调试前端页面布局，可以使用此模式（此时后端功能不可用）。
+3.  **Web-Only Development Mode**:
+    If you only need to debug the frontend page layout, you can use this mode (backend functions are unavailable).
     ```bash
     make dev-web
     ```
 
-### 构建与发布
+### Build & Release
 
-*   **构建生产版本**:
+*   **Build Production Version**:
     ```bash
     make build
     ```
 
-## 📖 使用指南
+## 📖 Usage Guide
 
-### 如何创建同步任务？
+### How to Create a Sync Task?
 
-1.  进入 **Flow.Designer** 页面。
-2.  **添加节点**：
-    *   点击左上角工具栏的第一个图标 <kbd><Database /></kbd> 添加 **Source**（源仓库）。
-    *   点击第三个图标 <kbd><ArrowRight /></kbd> 添加 **Target**（目标仓库）。
-3.  **配置节点**:
-    *   点击节点，在右侧面板配置镜像地址（如 `nginx:latest`）和认证凭证。
-4.  **连接与执行**:
-    *   系统会自动识别 Source 和 Target 并建立连接。
-    *   点击右上角的 **EXECUTE_SYNC** 开始同步。
-    *   在右下角 **Live_Task_Log** 观察实时进度。
+1.  Enter the **Flow.Designer** page.
+2.  **Add Nodes**:
+    *   Click the first icon <kbd><Database /></kbd> in the top-left toolbar to add a **Source** (Source Registry).
+    *   Click the third icon <kbd><ArrowRight /></kbd> to add a **Target** (Target Registry).
+3.  **Configure Nodes**:
+    *   Click on a node to configure the image address (e.g., `nginx:latest`) and authentication credentials in the right panel.
+4.  **Connect & Execute**:
+    *   The system will automatically identify Source and Target and establish a connection.
+    *   Click **EXECUTE_SYNC** in the top right corner to start synchronization.
+    *   Monitor real-time progress in the bottom right **Live_Task_Log**.
 
-### 遇到问题？
+### Troubleshooting
 
-*   执行同步前，请确保已经在 `Auth.Vault` 中添加了对应的仓库凭证并测试通过。
-*   如果同步失败，您可以随时在 `Sync.History` 页面查看历史任务的完整日志进行排查。
+*   Before executing sync, please ensure that the corresponding registry credentials have been added to `Auth.Vault` and tested successfully.
+*   If synchronization fails, you can check the complete log of the historical task in the `Sync.History` page for troubleshooting at any time.
